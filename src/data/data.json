@@ -1,0 +1,67 @@
+{
+  "home": "72157713926881598",
+  "menu": [
+    {
+      "id": "home",
+      "text": "Hasiera",
+      "path": "/",
+      "home": true
+    },
+    {
+      "id": "info",
+      "text": "Info",
+      "path": "/info"
+    }
+  ],
+  "info": {
+    "EU": {
+      "text": [
+        "Araotz, horixe da proiektu honen izena. Araotzeko Familiak erretratu bilduma bat da"
+      ],
+      "contact": {
+        "title": "Kontaktua",
+        "mail": "e-posta"
+      }
+    },
+    "ES": {
+      "text": [
+        "Araotz, ese es el nombre de este proyecto. Araotzeko familiak es una colección de retratos"
+      ],
+      "contact": {
+        "title": "Contacto",
+        "mail": "e-mail"
+      }
+    },
+    "EN": {
+      "text": [
+        "This project is called Araotz, it is a of portraits of families from Araotz"
+      ],
+      "contact": {
+        "title": "Contact",
+        "mail": "email"
+      }
+    },
+    "FR": {
+      "text": [
+        "Araotz est le nom de ce projet, qui est une collection de portraits des familles de Araotz"
+      ],
+      "contact": {
+        "title": "Contact",
+        "mail": "email"
+      }
+    },
+    "CA": {
+      "text": ["Araotz"],
+      "contact": {
+        "title": "Contacte",
+        "mail": "e-mail"
+      }
+    },
+    "more": {
+      "name": "Joxefe Diaz de Tuesta",
+      "phone": "+34 677 536 846",
+      "mail": "arrasateargitan@gmail.com",
+      "site": "https://www.flickr.com/photos/atauri"
+    }
+  }
+}
