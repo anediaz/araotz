@@ -1,5 +1,13 @@
 {
-  "home": "72157713926881598",
+  "home": {
+    "families" : [
+      {"coverId" : "49895010792", "photosetId": "72157714303130513", "name":"Zumalde-Lasagabaster"},
+      {"coverId" : "49895045147", "photosetId": "72157714304397326", "name":"Urkia-Goitia"},
+      {"coverId" : "49894152368", "photosetId": "72157714301942166", "name":"Guridi-Grisaleña"},
+      {"coverId" : "49784600151", "photosetId": "72157713926881598", "name":"Zumalde-Zumalde"}
+
+    ]
+  },
   "menu": [
     {
       "id": "home",

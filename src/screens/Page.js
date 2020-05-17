@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HashRouter, Route } from "react-router-dom";
 import Menu from "../components/Menu";
 import { home, menu } from "../data/data.json";
-import PhotoLoader from "../components/PhotoLoader";
+import Families from "../components/Families";
 import Info from "./Info";
 
 const PageWrapper = styled.div`
@@ -42,13 +42,13 @@ const Logo = styled.div`
 const LogoTitle = styled.div`
   height: 5rem;
   padding: 0.5rem 0;
-  content: url("./araotz.png");
+  content: url("./araotz/araotz.png");
   margin: 0 auto;
   :before {
     height: 4rem;
     width: 241px;
     padding: 0.5rem 0;
-    background-image: url("./araotz.png");
+    background-image: url("./araotz/araotz.png");
     background-size: auto 4rem;
     display: inline-block;
     content: "";
@@ -106,10 +106,10 @@ const Page = () => {
             exact
             path={menu[0].path}
             render={() => (
-              <PhotoLoader
-                photosetId={home}
-                photos={photosets[home]}
-                setPhotos={setPhotos}
+              <Families
+                families={home.families}
+                photos={photosets["families"]}
+                setPhotos={p=>setPhotos("families", p)}
                 configurations={configurations}
               />
             )}
