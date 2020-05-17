@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/araotz/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/araotz/static/js/main.255c2bbc.chunk.js",
-    "main.js.map": "/araotz/static/js/main.255c2bbc.chunk.js.map",
+    "main.js": "/araotz/static/js/main.05c40dcc.chunk.js",
+    "main.js.map": "/araotz/static/js/main.05c40dcc.chunk.js.map",
     "runtime-main.js": "/araotz/static/js/runtime-main.14718901.js",
     "runtime-main.js.map": "/araotz/static/js/runtime-main.14718901.js.map",
     "static/js/2.d3033f71.chunk.js": "/araotz/static/js/2.d3033f71.chunk.js",
     "static/js/2.d3033f71.chunk.js.map": "/araotz/static/js/2.d3033f71.chunk.js.map",
     "index.html": "/araotz/index.html",
-    "precache-manifest.40e6e315a86e76808befad249fa08838.js": "/araotz/precache-manifest.40e6e315a86e76808befad249fa08838.js",
+    "precache-manifest.b155df7bd153666f39c216ca36dcd125.js": "/araotz/precache-manifest.b155df7bd153666f39c216ca36dcd125.js",
     "service-worker.js": "/araotz/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/araotz/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.d3033f71.chunk.js.LICENSE.txt": "/araotz/static/js/2.d3033f71.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.14718901.js",
     "static/js/2.d3033f71.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.255c2bbc.chunk.js"
+    "static/js/main.05c40dcc.chunk.js"
   ]
 }
