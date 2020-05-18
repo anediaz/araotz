@@ -7,13 +7,11 @@ async function getPhotoset(photoSetId, size) {
     : { Error: `Error while reading photoset=${photoSetId}` };
 }
 
-async function getPhoto(photoId, sizeLabel) {
+async function getPhoto(photoId, sizeLabels) {
   const response = await fetch(getPhotoUrl(photoId));
   if(response && response.ok){
     const infos = await response.json()
-    const sizes = infos.sizes.size
-    const obj = {photoId, infos: sizes.find(s=>s.label === sizeLabel)}
-    return obj;
+    return {photoId, sizes: infos.sizes.size.filter(s=>sizeLabels.includes(s.label))}
   }
   else{
     return { Error: `Error while reading photo=${photoId}` }
@@ -24,8 +22,8 @@ async function getPhoto(photoId, sizeLabel) {
 
 }
 
-async function getPhotos(photoIds, sizeLabel) {
-  const photos = await Promise.all(photoIds.map(id=>getPhoto(id, sizeLabel)))
+async function getPhotos(photoIds, sizeLabels) {
+  const photos = await Promise.all(photoIds.map(id=>getPhoto(id, sizeLabels)))
   return photos
 }
 

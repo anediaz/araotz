@@ -51,21 +51,25 @@ const Item = styled.div`
 
 
 const Families = ({
-  families,
+  families = [],
   photos = [],
   setPhotos,
 }) => {
   useEffect(() => {
     if (!photos || !photos.length) {
-      FlickrAPI.getPhotos(families.map(f=>f.coverId), SIZE_LABELS.LARGE).then(
-        (result) => setPhotos(result.map(r=>r.infos.source)),
+      FlickrAPI.getPhotos(families.map(f=>f.coverId), [SIZE_LABELS.LARGE, SIZE_LABELS.SMALL]).then(
+        (result) => setPhotos(result.map(r=>r.sizes.map(size=>({label: size.label, source: size.source})))),
         (error) => console.log("error =" + error)
       );
     }
   });
 
+const getBigPicture = picture => picture.find(p=>p.label === SIZE_LABELS.LARGE).source;
+
 return <FamiliesWrapper> {
-  photos && photos.length ? photos.map((p, index)=><Item key={index}><FamilyName>{families[index].name}</FamilyName><FamilyImage src={p}/></Item>) : ''
+  photos && photos.length ?
+    photos.map((p, index)=><Item key={index}><FamilyName>{families[index].name}</FamilyName><FamilyImage src={getBigPicture(p)}/></Item>)
+    : ''
 }
 </FamiliesWrapper>
 };
