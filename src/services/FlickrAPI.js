@@ -16,9 +16,6 @@ async function getPhoto(photoId, sizeLabels) {
   else{
     return { Error: `Error while reading photo=${photoId}` }
   }
-  /* return response && response.ok
-    ? ({photoId, infos: (await response.json().sizes.size.find(s=>s.label===sizeLabel))})
-    : { Error: `Error while reading photo=${photoId}` };*/
 
 }
 
@@ -29,4 +26,5 @@ async function getPhotos(photoIds, sizeLabels) {
 
 export default {
   getPhotos,
+  getPhotoset
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HashRouter, Route } from "react-router-dom";
 import Menu from "../components/Menu";
 import { home, menu } from "../data/data.json";
-import Families from "../components/Families";
+import Families from "../components/Families/Families";
 import Info from "./Info";
 
 const PageWrapper = styled.div`
@@ -80,11 +80,6 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const configurations = [
-  { minWidth: 480, cols: 7, margin: 1 },
-  { maxWidth: 479, cols: 4, margin: 1 },
-];
-
 const Page = () => {
   const [photosets, setPhotosets] = useState({});
 
@@ -107,10 +102,9 @@ const Page = () => {
             path={menu[0].path}
             render={() => (
               <Families
-                families={home.families}
+                familiesData={home.families}
                 photos={photosets["families"]}
-                setPhotos={p=>setPhotos("families", p)}
-                configurations={configurations}
+                updatePhotos={p=>setPhotos("families", p)}
               />
             )}
           />
