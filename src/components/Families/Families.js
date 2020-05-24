@@ -88,8 +88,8 @@ const closeFamily = () => {
 }
 
 const transformForAllFamilies = (result) => {
-    const transformSize = ({sizes}) => ({ mainPicture : sizes[0].source, miniPicture: sizes[1].source})
-    return result.map(transformSize);
+    const transform = (sizes, index) => ({ mainPicture : sizes[0].source, miniPicture: sizes[1].source, name: familiesData[index].name})
+    return result.map(({sizes}, index) => transform(sizes, index));
 }
 const transformForGallery = result =>
     result.map(r => {
@@ -112,7 +112,7 @@ return (<Wrapper light={selectedFamily}>
           <FamilyImage src={p.mainPicture}/>
         </Item>)}
       </FamiliesContainer>) :
-      <OneFamily currentFamily={selectedFamily} allFamilies={photos.map(p=>p.miniPicture)} onClose={closeFamily} onFamilyClick={openFamily}/>
+      <OneFamily currentFamily={selectedFamily} allFamilies={photos.map(({miniPicture, name})=>({miniPicture, name}))} onClose={closeFamily} onFamilyClick={openFamily}/>
       : ''}
     </Wrapper>)
 };

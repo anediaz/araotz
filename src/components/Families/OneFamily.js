@@ -45,6 +45,10 @@ const ButtonContainer= styled.div`
   top: -15px;
   left: -15px;
   z-index: 5000;
+  height: 30px;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 const MiniFamilyImage = styled.img`
@@ -102,8 +106,8 @@ const OneFamily = ({currentFamily, allFamilies, onClose, onFamilyClick }) => {
 
   const getMiniFamily = (family,index) =>{
     return <Item key={index} onClick={() => onFamilyClick(index)}>
-      <MiniFamilyImage src={family}/>
-      <Tooltip>aa</Tooltip>
+      <MiniFamilyImage src={family.miniPicture}/>
+      <Tooltip>{family.name}</Tooltip>
     </Item>
   }
 
