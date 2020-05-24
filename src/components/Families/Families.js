@@ -8,6 +8,13 @@ const Wrapper  = styled.div`
   height: 100%;
   color: white;
   background-color: ${props => (props.light ? "white" : "black")};
+  position: relative;
+`;
+
+const FamilyMainTitle = styled.div`
+  position: absolute;
+  top: -2rem;
+  left: 1rem;
 `;
 const FamiliesContainer = styled.div`
   display: flex;
@@ -72,12 +79,18 @@ const Families = ({
 const openFamily = async index => {
   const photos = await FlickrAPI.getPhotoset(familiesData[index].photosetId, urlsBySize);
   setSelectedFamily({index, family: familiesData[index], photos: transformForGallery(photos)});
-  }
+  window.scrollTo(0, 0);
+}
 
-  const transformForAllFamilies = (result) => {
+const closeFamily = () => {
+  setSelectedFamily(null);
+  window.scrollTo(0, 0);
+}
+
+const transformForAllFamilies = (result) => {
     const transformSize = ({sizes}) => ({ mainPicture : sizes[0].source, miniPicture: sizes[1].source})
     return result.map(transformSize);
-  }
+}
 const transformForGallery = result =>
     result.map(r => {
       return {
@@ -89,6 +102,7 @@ const transformForGallery = result =>
     });
 
 return (<Wrapper light={selectedFamily}>
+  {selectedFamily && <FamilyMainTitle>{`>>  ${selectedFamily.family.name}  <<`}</FamilyMainTitle>}
   {photos && photos.length ?
     !selectedFamily ?
       (<FamiliesContainer>
@@ -98,7 +112,7 @@ return (<Wrapper light={selectedFamily}>
           <FamilyImage src={p.mainPicture}/>
         </Item>)}
       </FamiliesContainer>) :
-      <OneFamily currentFamily={selectedFamily} allFamilies={photos.map(p=>p.miniPicture)} onClose={()=>setSelectedFamily(null)} onFamilyClick={()=> openFamily(selectedFamily.index)}/>
+      <OneFamily currentFamily={selectedFamily} allFamilies={photos.map(p=>p.miniPicture)} onClose={closeFamily} onFamilyClick={openFamily}/>
       : ''}
     </Wrapper>)
 };
