@@ -5,13 +5,19 @@
       {"coverId" : "49895045147", "photosetId": "72157714304397326", "name":"Urkia-Goitia"},
       {"coverId" : "49894152368", "photosetId": "72157714301942166", "name":"Guridi-Grisaleña"},
       {"coverId" : "49784600151", "photosetId": "72157713926881598", "name":"Zumalde-Zumalde"},
-      {"coverId" : "49905247463", "photosetId": "72157714341698886", "name":"Gente"},
-      {"coverId" : "49879285871", "photosetId": "72157714249104673", "name":"Ikuspegia"},
-      {"coverId" : "49818403092", "photosetId": "72157714037355976", "name":"El duende azul"},
-      {"coverId" : "49578445842", "photosetId": "72157713236688393", "name":"Miren"},
-      {"coverId" : "49493427121", "photosetId": "72157712987962936", "name":"Santa Ageda bezpera"},
-      {"coverId" : "48849509811", "photosetId": "72157711209656183", "name":"Maritxu Kajoi"},
-      {"coverId" : "45452040912", "photosetId": "72157702549809024", "name":"Kopencycle"}
+      {"coverId" : "49933720531", "photosetId": "72157714447484653", "name":"Zumalde-Barrena"},
+      {"coverId" : "49933160718", "photosetId": "72157714447963992", "name":"Uriarte-Madinabeitia"},
+      {"coverId" : "49933155518", "photosetId": "72157714446231096", "name":"Mugartza-Aranburu"},
+      {"coverId" : "49933660396", "photosetId": "72157714446217726", "name":"Igartua-Zumalde"},
+      {"coverId" : "49933656606", "photosetId": "72157714447885987", "name":"Zumalde-Ibabe"},
+      {"coverId" : "49933638796", "photosetId": "72157714447222953", "name":"Azkoitia-Guridi"},
+      {"coverId" : "49933922512", "photosetId": "72157714447041908", "name":"Orueta-Cueva"},
+      {"coverId" : "49934383026", "photosetId": "72157714449958063", "name":"Bilbatua-Rodriguez"},
+      {"coverId" : "49933029428", "photosetId": "72157714447388062", "name":"Beitia-Barrena"},
+      {"coverId" : "49933554221", "photosetId": "72157714445739926", "name":"Bolinaga-Erostabe"},
+      {"coverId" : "49933051413", "photosetId": "72157714447472112", "name":"Ibabe-Uriarte"},
+      {"coverId" : "49933891022", "photosetId": "72157714445841101", "name":"Erostabe-Galdos"},
+      {"coverId" : "49933082748", "photosetId": "72157714445877131", "name":"Goitia-Unzurrunzaga"}
     ]
   },
   "menu": [
@@ -20,6 +26,11 @@
       "text": "Hasiera",
       "path": "/",
       "home": true
+    },
+    {
+      "id": "makingof",
+      "text": "Making of",
+      "path": "/makingof"
     },
     {
       "id": "info",
