@@ -11,11 +11,6 @@ const Wrapper  = styled.div`
   position: relative;
 `;
 
-const FamilyMainTitle = styled.div`
-  position: absolute;
-  top: -2rem;
-  left: 1rem;
-`;
 const FamiliesContainer = styled.div`
 height: 100%
 `;
@@ -74,7 +69,6 @@ const transformForGallery = result =>
   }));
 
 return (<Wrapper>
-  {selectedFamily && <FamilyMainTitle>{`>>  ${selectedFamily.family.name}  <<`}</FamilyMainTitle>}
   {photos && photos.length ?
     !selectedFamily ?
       (<FamiliesContainer className="familiesContainer">
