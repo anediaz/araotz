@@ -1,5 +1,5 @@
 const API_KEY = "febb771e0ff0730eea9758f8931d7462";
-const USER_ID = "24033063@N00";
+// const USER_ID = "24033063@N00";
 export const getPhotosetUrl = (photosetId, extras) =>
   `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${API_KEY}&extras=${extras}&format=json&nojsoncallback=true&method=flickr.photosets.getPhotos&photoset_id=${photosetId}`;
 export const getPhotoUrl= photoId =>
@@ -20,6 +20,7 @@ export const getPhotoUrl= photoId =>
 export const SIZE_LABELS = {
   LARGE: 'Large',
   SMALL: 'Small',
+  SMALL320: "Small 320",
   MEDIUM: 'Medium'
 }
 

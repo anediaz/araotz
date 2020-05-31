@@ -4,6 +4,7 @@ import { HashRouter, Route } from "react-router-dom";
 import Menu from "../components/Menu";
 import { home, menu } from "../data/data.json";
 import Families from "../components/Families/Families";
+import MakingOf from "./MakingOf";
 import Info from "./Info";
 
 const PageWrapper = styled.div`
@@ -108,7 +109,8 @@ const Page = () => {
               />
             )}
           />
-          <Route path={menu[1].path} component={Info} />
+          <Route path={menu[1].path} component={MakingOf} />
+          <Route path={menu[2].path} component={Info} />
         </Container>
       </PageWrapper>
     </HashRouter>
