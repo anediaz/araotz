@@ -55,8 +55,8 @@ const transformForAllFamilies = (result) => {
     const big = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
     const miniPicture = sizes.find(s=>s.label ===SIZE_LABELS.SMALL)
     const galleryPicture = sizes.find(s=>s.label ===SIZE_LABELS.SMALL320)
-    const gallery = {src: galleryPicture.source, width: galleryPicture.width, height: galleryPicture.height, bigSrc: big.source,  name: familiesData[index].name, id: index} ;
-    return {miniPicture: miniPicture.source, gallery: gallery};
+    const gallery = {src: galleryPicture.source, width: galleryPicture.width, height: galleryPicture.height, bigSrc: big.source, id: index} ;
+    return {miniPicture: miniPicture.source, gallery: gallery, name: familiesData[index].name};
   }
   return result.map(({sizes}, index) => transform(sizes, index));
 }
