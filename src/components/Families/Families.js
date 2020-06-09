@@ -19,7 +19,7 @@ height: 100%
 const { small320: def, large1024: big } = EXTRAS;
 const urlsBySize = `${def.url},${big.url}`;
 const configurations = [
-  { minWidth: 480, cols: 4, margin: 1 },
+  { minWidth: 480, cols: 3, margin: 1 },
   { maxWidth: 479, cols: 3, margin: 1 }
 ];
 
