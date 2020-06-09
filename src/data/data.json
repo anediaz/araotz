@@ -1,10 +1,11 @@
 {
   "home": {
     "families" : [
-      {"coverId" : "49895010792", "photosetId": "72157714303130513", "name":"Zumalde-Lasagabaster"},
-      {"coverId" : "49895045147", "photosetId": "72157714304397326", "name":"Urkia-Goitia"},
-      {"coverId" : "49894152368", "photosetId": "72157714301942166", "name":"Guridi-Grisaleña"},
-      {"coverId" : "49784600151", "photosetId": "72157713926881598", "name":"Zumalde-Zumalde"},
+      {"coverId" : "49959611108", "photosetId": "72157714537142516", "name":"Lazkano-Ibabe"},
+      {"coverId" : "49960322932", "photosetId": "72157714538758167", "name":"Agirre-Bergara"},
+      {"coverId" : "49959515208", "photosetId": "72157714537981293", "name":"Pereda-Lezeta"},
+      {"coverId" : "49959503178", "photosetId": "72157714536787291", "name":"Auzmendi-Zumalde"},
+      {"coverId" : "49934383026", "photosetId": "72157714449958063", "name":"Bilbatua-Rodriguez"},
       {"coverId" : "49933720531", "photosetId": "72157714447484653", "name":"Zumalde-Barrena"},
       {"coverId" : "49933160718", "photosetId": "72157714447963992", "name":"Uriarte-Madinabeitia"},
       {"coverId" : "49933155518", "photosetId": "72157714446231096", "name":"Mugartza-Aranburu"},
@@ -12,12 +13,15 @@
       {"coverId" : "49933656606", "photosetId": "72157714447885987", "name":"Zumalde-Ibabe"},
       {"coverId" : "49933638796", "photosetId": "72157714447222953", "name":"Azkoitia-Guridi"},
       {"coverId" : "49933922512", "photosetId": "72157714447041908", "name":"Orueta-Cueva"},
-      {"coverId" : "49934383026", "photosetId": "72157714449958063", "name":"Bilbatua-Rodriguez"},
-      {"coverId" : "49933029428", "photosetId": "72157714447388062", "name":"Beitia-Barrena"},
-      {"coverId" : "49933554221", "photosetId": "72157714445739926", "name":"Bolinaga-Erostabe"},
-      {"coverId" : "49933051413", "photosetId": "72157714447472112", "name":"Ibabe-Uriarte"},
+      {"coverId" : "49933082748", "photosetId": "72157714445877131", "name":"Goitia-Unzurrunzaga"},
       {"coverId" : "49933891022", "photosetId": "72157714445841101", "name":"Erostabe-Galdos"},
-      {"coverId" : "49933082748", "photosetId": "72157714445877131", "name":"Goitia-Unzurrunzaga"}
+      {"coverId" : "49933051413", "photosetId": "72157714447472112", "name":"Ibabe-Uriarte"},
+      {"coverId" : "49933554221", "photosetId": "72157714445739926", "name":"Bolinaga-Erostabe"},
+      {"coverId" : "49933029428", "photosetId": "72157714447388062", "name":"Beitia-Barrena"},
+      {"coverId" : "49895045147", "photosetId": "72157714304397326", "name":"Urkia-Goitia"},
+      {"coverId" : "49895010792", "photosetId": "72157714303130513", "name":"Zumalde-Lasagabaster"},
+      {"coverId" : "49894152368", "photosetId": "72157714301942166", "name":"Guridi-Grisaleña"},
+      {"coverId" : "49784600151", "photosetId": "72157713926881598", "name":"Zumalde-Zumalde"}
     ]
   },
   "menu": [
