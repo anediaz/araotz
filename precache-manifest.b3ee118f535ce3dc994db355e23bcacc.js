@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ed67b5bdaa8aad682fb75d8e570451a5",
+    "revision": "cdcd530a2035c8f9a3788973d3f37157",
     "url": "/araotz/index.html"
   },
   {
-    "revision": "7204ce3ebf83c13498ae",
+    "revision": "cee4196a0d0f66016a07",
     "url": "/araotz/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/araotz/static/js/2.01170e4b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7204ce3ebf83c13498ae",
-    "url": "/araotz/static/js/main.19b6ccad.chunk.js"
+    "revision": "cee4196a0d0f66016a07",
+    "url": "/araotz/static/js/main.20232669.chunk.js"
   },
   {
     "revision": "151e25607ab6bed883aa",
