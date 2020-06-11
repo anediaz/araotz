@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Page from "./Page";
 import LanguageSelector from "../components/LanguageSelector";
 import { info } from "../data/data";
 
@@ -108,41 +109,43 @@ const Info = () => {
   const languageClickHandler = (selectedLanguage) =>
     setLanguage(selectedLanguage);
   return (
-    <Wrapper>
-      <LanguageSelector
-        language={language}
-        handleLanguageClick={languageClickHandler}
-      />
+    <Page>
+      <Wrapper>
+        <LanguageSelector
+          language={language}
+          handleLanguageClick={languageClickHandler}
+        />
 
-      <Content>
-        <Text>
-          {info[language].text.map((paragraph, key) => (
-            <p key={`paragraph${key}`}>{paragraph}</p>
-          ))}
-        </Text>
+        <Content>
+          <Text>
+            {info[language].text.map((paragraph, key) => (
+              <p key={`paragraph${key}`}>{paragraph}</p>
+            ))}
+          </Text>
 
-        <Contact>
-          <Title>{info[language].contact.title}</Title>
-          <Line>
-            <div>{more.name}</div>
-            <div>{more.phone}</div>
-          </Line>
-          <Line>
-            <div>
-              {info[language].contact.mail}:{" "}
-              <A href={`mailto:${more.mail}`} target="_top">
-                {more.mail}
-              </A>
-            </div>
-            <div>
-              <A href={more.site} target="_blank" rel="noopener noreferrer">
-                Flickr
-              </A>
-            </div>
-          </Line>
-        </Contact>
-      </Content>
-    </Wrapper>
+          <Contact>
+            <Title>{info[language].contact.title}</Title>
+            <Line>
+              <div>{more.name}</div>
+              <div>{more.phone}</div>
+            </Line>
+            <Line>
+              <div>
+                {info[language].contact.mail}:{" "}
+                <A href={`mailto:${more.mail}`} target="_top">
+                  {more.mail}
+                </A>
+              </div>
+              <div>
+                <A href={more.site} target="_blank" rel="noopener noreferrer">
+                  Flickr
+                </A>
+              </div>
+            </Line>
+          </Contact>
+        </Content>
+      </Wrapper>
+    </Page>
   );
 };
 export default Info;

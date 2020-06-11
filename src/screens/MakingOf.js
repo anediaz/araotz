@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Page from './Page';
 
 const Wrapper = styled.div`
   margin-top: 0.2rem;
@@ -13,9 +14,11 @@ const Wrapper = styled.div`
 
 const MakingOf = () => {
   return (
-    <Wrapper>
-      Making of
-    </Wrapper>
+    <Page>
+      <Wrapper>
+        Making of
+      </Wrapper>
+    </Page>
   );
 };
 export default MakingOf;

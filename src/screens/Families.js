@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Gallery from 'react-ikusi';
-import FlickrAPI from "../../services/FlickrAPI";
-import { SIZE_LABELS, EXTRAS } from "../../constants/constants";
-import OneFamily from './OneFamily';
+import Page from './Page';
+import FlickrAPI from "../services/FlickrAPI";
+import { SIZE_LABELS, EXTRAS } from "../constants/constants";
+import OneFamily from '../components/OneFamily';
 const Wrapper  = styled.div`
   margin-top: .2rem;
   height: 100%;
@@ -67,15 +68,18 @@ const transformForGallery = result =>
       bigSrc: r[big.url]
   }));
 
-return (<Wrapper>
-  {photos && photos.length ?
-    !selectedFamily ?
+return (
+  <Page>
+   <Wrapper>
+    {photos && photos.length ?
+     !selectedFamily ?
       (<FamiliesContainer className="familiesContainer">
         <Gallery className="gallery" photos={photos.map(p=>p.gallery)} configurations={configurations} onClickPhoto={openFamily} withLightbox={false}/>
       </FamiliesContainer>) :
       <OneFamily currentFamily={selectedFamily} allFamilies={photos.map(({miniPicture, name})=>({miniPicture, name}))} onClose={closeFamily} onFamilyClick={openFamily}/>
       : ''}
-    </Wrapper>)
+    </Wrapper>
+  </Page>)
 };
 
 

@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { HashRouter, Route } from "react-router-dom";
 import Menu from "../components/Menu";
-import { home, menu } from "../data/data.json";
-import Families from "../components/Families/Families";
-import MakingOf from "./MakingOf";
-import Info from "./Info";
+import { menu } from "../data/data.json";
 
 const PageWrapper = styled.div`
   color: white;
@@ -81,15 +77,8 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const Page = () => {
-  const [photosets, setPhotosets] = useState({});
-
-  const setPhotos = (photosetId, photos) => {
-    setPhotosets({ ...photosets, [photosetId]: photos });
-  };
-
+const Page = ({children}) => {
   return (
-    <HashRouter>
       <PageWrapper>
         <Header>
           <Logo>
@@ -98,22 +87,9 @@ const Page = () => {
           <Menu items={menu} />
         </Header>
         <Container>
-          <Route
-            exact
-            path={menu[0].path}
-            render={() => (
-              <Families
-                familiesData={home.families}
-                photos={photosets["families"]}
-                updatePhotos={p=>setPhotos("families", p)}
-              />
-            )}
-          />
-          <Route path={menu[1].path} component={MakingOf} />
-          <Route path={menu[2].path} component={Info} />
+          {children}
         </Container>
       </PageWrapper>
-    </HashRouter>
   );
 };
 
