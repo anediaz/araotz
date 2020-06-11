@@ -16,7 +16,7 @@ height: 100%
 `;
 
 
-const { small320: def, large1024: big } = EXTRAS;
+const { large1024: def, large1024: big } = EXTRAS;
 const urlsBySize = `${def.url},${big.url}`;
 const configurations = [
   { minWidth: 480, cols: 3, margin: 1 },
@@ -39,7 +39,6 @@ const Families = ({
   });
 
 const openFamily = async index => {
-  debugger;
   const photos = await FlickrAPI.getPhotoset(familiesData[index].photosetId, urlsBySize);
   setSelectedFamily({index, family: familiesData[index], photos: transformForGallery(photos)});
   window.scrollTo(0, 0);
@@ -54,7 +53,7 @@ const transformForAllFamilies = (result) => {
   const transform = (sizes, index) => {
     const big = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
     const miniPicture = sizes.find(s=>s.label ===SIZE_LABELS.SMALL)
-    const galleryPicture = sizes.find(s=>s.label ===SIZE_LABELS.SMALL320)
+    const galleryPicture = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
     const gallery = {src: galleryPicture.source, width: galleryPicture.width, height: galleryPicture.height, bigSrc: big.source, id: index} ;
     return {miniPicture: miniPicture.source, gallery: gallery, name: familiesData[index].name};
   }
