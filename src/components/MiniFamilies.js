@@ -5,23 +5,27 @@ import styled from "styled-components";
 import CloseCircleIcon from 'mdi-react/CloseCircleIcon';
 
 
-const BottomFixedContainer= styled.div`
+const Wrapper = styled.div`
+  margin-top: 6.8rem;
+  text-align: center;
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+  @media (min-width: 1920px) {
+    margin-top: 15rem;
+  }
   height : calc (5rem + .!rem);
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
 `;
-
 
 const MiniaturesContainer = styled.div`
   height: 100%;
   max-width: 90%;
   background-color: white;
   display: flex;
-  padding: .4rem;
+  padding: .2rem .2rem 0 .2rem;
   position: relative;
 `;
 
@@ -75,7 +79,7 @@ const MiniFamilyImage = styled.img`
 
 const Item = styled.div`
   text-align: center;
-  margin: 0 .2rem;
+  margin: 0 .1rem;
   position: relative;
   &:hover{
     cursor: pointer;
@@ -108,7 +112,7 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
   }
 
   return (
-    <BottomFixedContainer>
+    <Wrapper>
       <MiniaturesContainer >
         <ButtonContainer>
           <CloseCircleIcon size={30} onClick={onClose} style={closeButtonStyle}/>
@@ -117,7 +121,7 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
           {displayMiniFamilies()}
         </Carousel>
       </MiniaturesContainer>
-    </BottomFixedContainer>)
+    </Wrapper>)
     }
 
     export default MiniFamilies;

@@ -12,7 +12,7 @@ const PageWrapper = styled.div`
 const Header = styled.div`
   padding-top: 1.25rem;
   background-color: black;
-  height: 13.4rem;
+  height: ${(props) => (props.alternativeMenu ? "18rem" : "13.4rem")};
   @media (max-width: 768px) {
     padding-top: 0.8rem;
     height: 7.5rem;
@@ -80,7 +80,7 @@ const Container = styled.div`
 const Page = ({children, alternativeMenu}) => {
   return (
       <PageWrapper>
-        <Header>
+        <Header alternativeMenu={alternativeMenu}>
           <Logo>
             <LogoTitle />
           </Logo>

@@ -72,22 +72,21 @@ const transformForGallery = result =>
       bigSrc: r[big.url]
   }));
 
-return (
-  <Page>
-   <Wrapper>
-    {photos && photos.length ?
-     !selectedFamily ?
-      (<FamiliesContainer className="familiesContainer">
-        <Gallery className="gallery" photos={photos.map(p=>p.gallery)} configurations={configurations} onClickPhoto={openFamily} withLightbox={false}/>
-      </FamiliesContainer>) :
-      <>
+  const alternativeMenu = selectedFamily ? <MiniFamilies currentFamily={selectedFamily} allFamilies={photos.map(({miniPicture, name})=>({miniPicture, name}))} onClose={closeFamily} onFamilyClick={openFamily}/> : null;
+
+  return (
+    <Page alternativeMenu={alternativeMenu}>
+    <Wrapper>
+      {photos && photos.length ?
+      !selectedFamily ?
+        (<FamiliesContainer className="familiesContainer">
+          <Gallery className="gallery" photos={photos.map(p=>p.gallery)} configurations={configurations} onClickPhoto={openFamily} withLightbox={false}/>
+        </FamiliesContainer>) :
         <OneFamily currentFamily={selectedFamily} />
-        <MiniFamilies currentFamily={selectedFamily} allFamilies={photos.map(({miniPicture, name})=>({miniPicture, name}))} onClose={closeFamily} onFamilyClick={openFamily}/>
-      </>
-      : ''}
-    </Wrapper>
-  </Page>)
-};
+        : ''}
+      </Wrapper>
+    </Page>)
+  };
 
 
 export default Families;
