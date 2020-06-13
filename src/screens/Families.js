@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Gallery from 'react-ikusi';
-import Page from './Page';
+import Page from '../components/Page';
 import FlickrAPI from "../services/FlickrAPI";
 import { SIZE_LABELS, EXTRAS } from "../constants/constants";
 import OneFamily from '../components/OneFamily';
+import MiniFamilies from '../components/MiniFamilies';
+
 const Wrapper  = styled.div`
   margin-top: .2rem;
   height: 100%;
@@ -31,13 +33,24 @@ const Families = ({
 }) => {
   const [selectedFamily, setSelectedFamily] = useState(null);
   useEffect(() => {
-    if (!photos || !photos.length) {
-      FlickrAPI.getPhotos(familiesData.map(f=>f.coverId), [SIZE_LABELS.LARGE, SIZE_LABELS.SMALL, SIZE_LABELS.SMALL320]).then(
+    if(!photos || !photos.length){
+      FlickrAPI.getPhotos(familiesData.map(f=>f.coverId), [SIZE_LABELS.LARGE, SIZE_LABELS.SMALL]).then(
         (result) => updatePhotos(transformForAllFamilies(result)),
         (error) => console.log("error =" + error)
       );
     }
   });
+
+  const transformForAllFamilies = (result) => {
+    const transform = (sizes, index) => {
+      const big = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
+      const miniPicture = sizes.find(s=>s.label ===SIZE_LABELS.SMALL)
+      const galleryPicture = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
+      const gallery = {src: galleryPicture.source, width: galleryPicture.width, height: galleryPicture.height, bigSrc: big.source, id: index} ;
+      return {miniPicture: miniPicture.source, gallery: gallery, name: familiesData[index].name};
+    }
+    return result.map(({sizes}, index) => transform(sizes, index));
+  }
 
 const openFamily = async index => {
   const photos = await FlickrAPI.getPhotoset(familiesData[index].photosetId, urlsBySize);
@@ -50,16 +63,7 @@ const closeFamily = () => {
   window.scrollTo(0, 0);
 }
 
-const transformForAllFamilies = (result) => {
-  const transform = (sizes, index) => {
-    const big = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
-    const miniPicture = sizes.find(s=>s.label ===SIZE_LABELS.SMALL)
-    const galleryPicture = sizes.find(s=>s.label ===SIZE_LABELS.LARGE)
-    const gallery = {src: galleryPicture.source, width: galleryPicture.width, height: galleryPicture.height, bigSrc: big.source, id: index} ;
-    return {miniPicture: miniPicture.source, gallery: gallery, name: familiesData[index].name};
-  }
-  return result.map(({sizes}, index) => transform(sizes, index));
-}
+
 const transformForGallery = result =>
   result.map(r=>({
       src: r[def.url],
@@ -76,7 +80,10 @@ return (
       (<FamiliesContainer className="familiesContainer">
         <Gallery className="gallery" photos={photos.map(p=>p.gallery)} configurations={configurations} onClickPhoto={openFamily} withLightbox={false}/>
       </FamiliesContainer>) :
-      <OneFamily currentFamily={selectedFamily} allFamilies={photos.map(({miniPicture, name})=>({miniPicture, name}))} onClose={closeFamily} onFamilyClick={openFamily}/>
+      <>
+        <OneFamily currentFamily={selectedFamily} />
+        <MiniFamilies currentFamily={selectedFamily} allFamilies={photos.map(({miniPicture, name})=>({miniPicture, name}))} onClose={closeFamily} onFamilyClick={openFamily}/>
+      </>
       : ''}
     </Wrapper>
   </Page>)

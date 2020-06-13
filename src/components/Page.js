@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Menu from "../components/Menu";
+import Menu from "./Menu";
 import { menu } from "../data/data.json";
 
 const PageWrapper = styled.div`
@@ -77,14 +77,14 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const Page = ({children}) => {
+const Page = ({children, alternativeMenu}) => {
   return (
       <PageWrapper>
         <Header>
           <Logo>
             <LogoTitle />
           </Logo>
-          <Menu items={menu} />
+          {alternativeMenu ? alternativeMenu : <Menu items={menu} /> }
         </Header>
         <Container>
           {children}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Page from "./Page";
+import Page from "../components/Page";
 import LanguageSelector from "../components/LanguageSelector";
 import { info } from "../data/data";
 
