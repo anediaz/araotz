@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Icon from '@mdi/react';
-import { mdiCloseCircle } from '@mdi/js';
+import { mdiCloseCircle, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 
 
 
@@ -38,16 +38,6 @@ const Carousel = styled.div`
   margin: 0 auto;
 `;
 
-const ButtonContainer= styled.div`
-  position: absolute;
-  top: -11px;
-  left: -13px;
-  z-index: 5000;
-  height: 30px;
-  &:hover{
-    cursor: pointer;
-  }
-`;
 const Tooltip = styled.div`
   visibility: hidden;
   width: 120px;
@@ -92,11 +82,32 @@ const Item = styled.div`
   }
 `;
 
-const IconStyled = styled(Icon)`
+const CloseIconStyled = styled(Icon)`
   path{
     stroke: black;
   }
+  position: absolute;
+  top: -11px;
+  left: -13px;
+  z-index: 5000;
+  height: 30px;
+  &:hover{
+    cursor: pointer;
+  }
 `;
+
+const ArrowIconStyled = styled(Icon)`
+  position: absolute;
+  top: 15px;
+  left: ${(props) => (props.position === "left" && "-45px")};
+  right: ${(props) => (props.position === "right" && "-45px")};
+  z-index: 5000;
+  height: 100%;
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
 
 const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
 
@@ -118,12 +129,12 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
   return (
     <Wrapper>
       <MiniaturesContainer >
-        <ButtonContainer>
-          <IconStyled path={mdiCloseCircle} color="white" size={1} onClick={onClose}/>
-        </ButtonContainer>
+        <CloseIconStyled path={mdiCloseCircle} color="white" size={1} onClick={onClose}/>
+        <ArrowIconStyled path={mdiChevronLeft} color="white" size={2} position="left"/>
         <Carousel>
           {displayMiniFamilies()}
         </Carousel>
+        <ArrowIconStyled path={mdiChevronRight} color="white" size={2} position="right"/>
       </MiniaturesContainer>
     </Wrapper>)
     }
