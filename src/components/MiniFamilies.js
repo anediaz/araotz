@@ -97,11 +97,11 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
     const miniFamilies = allFamilies.map((f,index) => getMiniFamily(f,index));
     const half1 = miniFamilies.slice(indexToSkip+1, miniFamilies.length);
     const half2 = miniFamilies.slice(0,indexToSkip);
-    return half1.concat(half2);
+    return half1.concat(half2).splice(0, 10);
   }
 
   const closeButtonStyle = {
-    color : 'black'
+    color : 'red'
   }
 
   const getMiniFamily = (family,index) =>{
