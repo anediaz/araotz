@@ -2,7 +2,9 @@ import React from "react";
 
 import styled from "styled-components";
 
-import CloseCircleIcon from 'mdi-react/CloseCircleIcon';
+import Icon from '@mdi/react';
+import { mdiCloseCircle } from '@mdi/js';
+
 
 
 const Wrapper = styled.div`
@@ -38,8 +40,8 @@ const Carousel = styled.div`
 
 const ButtonContainer= styled.div`
   position: absolute;
-  top: -15px;
-  left: -15px;
+  top: -11px;
+  left: -13px;
   z-index: 5000;
   height: 30px;
   &:hover{
@@ -90,6 +92,12 @@ const Item = styled.div`
   }
 `;
 
+const IconStyled = styled(Icon)`
+  path{
+    stroke: black;
+  }
+`;
+
 const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
 
   const displayMiniFamilies = () => {
@@ -98,10 +106,6 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
     const half1 = miniFamilies.slice(indexToSkip+1, miniFamilies.length);
     const half2 = miniFamilies.slice(0,indexToSkip);
     return half1.concat(half2).splice(0, 10);
-  }
-
-  const closeButtonStyle = {
-    color : 'red'
   }
 
   const getMiniFamily = (family,index) =>{
@@ -115,7 +119,7 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
     <Wrapper>
       <MiniaturesContainer >
         <ButtonContainer>
-          <CloseCircleIcon size={30} onClick={onClose} style={closeButtonStyle}/>
+          <IconStyled path={mdiCloseCircle} color="white" size={1} onClick={onClose}/>
         </ButtonContainer>
         <Carousel>
           {displayMiniFamilies()}

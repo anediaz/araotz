@@ -10,11 +10,12 @@
     "url": "https://github.com/anediaz/araotz.git"
   },
   "dependencies": {
+    "@mdi/js": "^5.3.45",
+    "@mdi/react": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "gh-pages": "^2.2.0",
-    "mdi-react": "^7.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ikusi": "^1.0.8",
