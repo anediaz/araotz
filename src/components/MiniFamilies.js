@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import styled from "styled-components";
 
@@ -110,31 +110,51 @@ const ArrowIconStyled = styled(Icon)`
 
 
 const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
+  const [carouselPhotos, setCarouselPhotos] = useState([]);
 
-  const displayMiniFamilies = () => {
+  useEffect(() => {
     const {index : indexToSkip} = currentFamily;
-    const miniFamilies = allFamilies.map((f,index) => getMiniFamily(f,index));
+    const miniFamilies = allFamilies.map((family,index) => ({family, index}));
     const half1 = miniFamilies.slice(indexToSkip+1, miniFamilies.length);
     const half2 = miniFamilies.slice(0,indexToSkip);
-    return half1.concat(half2).splice(0, 10);
+    console.log("Carousel Photos ==> " + JSON.stringify([...half1, ...half2]));
+    setCarouselPhotos([...half1, ...half2]);
+  }, [currentFamily, allFamilies]);
+
+  const displayMiniFamilies = () => {
+    const newCarouselPhotos = [...carouselPhotos]
+    const limitedPhotos = newCarouselPhotos.length ? newCarouselPhotos.splice(0,10) : [];
+    return limitedPhotos.map(({family, index}) => getMiniFamily(family,index))
   }
 
-  const getMiniFamily = (family,index) =>{
+  const getMiniFamily = (family,index) => {
     return <Item key={index} onClick={() => onFamilyClick(index)}>
       <MiniFamilyImage src={family.miniPicture}/>
       <Tooltip>{family.name}</Tooltip>
     </Item>
   }
 
+  const slidePhotos = (direction) => {
+    if (carouselPhotos.length && direction === 'right'){
+      const [first, ...rest] = carouselPhotos
+      setCarouselPhotos([...rest, first]);
+    }
+    else if (carouselPhotos.length && direction === 'left'){
+      const newCarouselPhotos = [...carouselPhotos]
+      const last = newCarouselPhotos.pop();
+      setCarouselPhotos([last, ...newCarouselPhotos]);
+    }
+  }
+
   return (
     <Wrapper>
       <MiniaturesContainer >
         <CloseIconStyled path={mdiCloseCircle} color="white" size={1} onClick={onClose}/>
-        <ArrowIconStyled path={mdiChevronLeft} color="white" size={2} position="left"/>
+        <ArrowIconStyled path={mdiChevronLeft} color="white" size={2} position="left" onClick={() => slidePhotos('left')}/>
         <Carousel>
           {displayMiniFamilies()}
         </Carousel>
-        <ArrowIconStyled path={mdiChevronRight} color="white" size={2} position="right"/>
+        <ArrowIconStyled path={mdiChevronRight} color="white" size={2} position="right" onClick={() => slidePhotos('right')}/>
       </MiniaturesContainer>
     </Wrapper>)
     }

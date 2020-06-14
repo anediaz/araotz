@@ -19,9 +19,6 @@ const OneFamily = ({currentFamily }) => {
     { maxWidth: 479, cols: 2, margin: 1 }
   ];
 
-
-
-
   return(
   <OneFamilyContainer>
     <GalleryContainer>
