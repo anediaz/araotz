@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/araotz/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/araotz/static/js/main.7f2b909b.chunk.js",
-    "main.js.map": "/araotz/static/js/main.7f2b909b.chunk.js.map",
+    "main.js": "/araotz/static/js/main.bd819aa2.chunk.js",
+    "main.js.map": "/araotz/static/js/main.bd819aa2.chunk.js.map",
     "runtime-main.js": "/araotz/static/js/runtime-main.14718901.js",
     "runtime-main.js.map": "/araotz/static/js/runtime-main.14718901.js.map",
-    "static/js/2.02d4238c.chunk.js": "/araotz/static/js/2.02d4238c.chunk.js",
-    "static/js/2.02d4238c.chunk.js.map": "/araotz/static/js/2.02d4238c.chunk.js.map",
+    "static/js/2.c6741303.chunk.js": "/araotz/static/js/2.c6741303.chunk.js",
+    "static/js/2.c6741303.chunk.js.map": "/araotz/static/js/2.c6741303.chunk.js.map",
     "index.html": "/araotz/index.html",
-    "precache-manifest.c99a9fc89c22ccb713ffa6a4992537cf.js": "/araotz/precache-manifest.c99a9fc89c22ccb713ffa6a4992537cf.js",
+    "precache-manifest.46393254d64f4719afc454ad27045f42.js": "/araotz/precache-manifest.46393254d64f4719afc454ad27045f42.js",
     "service-worker.js": "/araotz/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/araotz/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.02d4238c.chunk.js.LICENSE.txt": "/araotz/static/js/2.02d4238c.chunk.js.LICENSE.txt"
+    "static/js/2.c6741303.chunk.js.LICENSE.txt": "/araotz/static/js/2.c6741303.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.14718901.js",
-    "static/js/2.02d4238c.chunk.js",
+    "static/js/2.c6741303.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.7f2b909b.chunk.js"
+    "static/js/main.bd819aa2.chunk.js"
   ]
 }
