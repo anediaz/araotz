@@ -4,6 +4,7 @@ import Gallery from 'react-ikusi';
 import Page from '../components/Page';
 import FlickrAPI from "../services/FlickrAPI";
 import { SIZE_LABELS, EXTRAS } from "../constants/constants";
+import { home } from "../data/data.json";
 import OneFamily from '../components/OneFamily';
 import MiniFamilies from '../components/MiniFamilies';
 
@@ -23,15 +24,15 @@ const { large1024: def, large1024: big } = EXTRAS;
 const urlsBySize = `${def.url},${big.url}`;
 const configurations = [
   { minWidth: 480, cols: 3, margin: 1 },
-  { maxWidth: 479, cols: 3, margin: 1 }
+  { maxWidth: 479, cols: 2, margin: 1 }
 ];
 
 const Families = ({
-  familiesData = [],
   photos = [],
   updatePhotos,
 }) => {
   const [selectedFamily, setSelectedFamily] = useState(null);
+  const familiesData = home.families;
   useEffect(() => {
     if(!photos || !photos.length){
       FlickrAPI.getPhotos(familiesData.map(f=>f.coverId), [SIZE_LABELS.LARGE, SIZE_LABELS.SMALL]).then(

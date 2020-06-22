@@ -15,8 +15,9 @@ const GalleryContainer = styled.div`
 
 const OneFamily = ({currentFamily }) => {
   const configurations = [
-    { minWidth: 480, cols: 2, margin: 1 },
-    { maxWidth: 479, cols: 2, margin: 1 }
+    { minWidth: 1920, cols: 3, margin: 1 },
+    { maxWidth: 1919, cols: 2, margin: 1 }
+
   ];
 
   return(
