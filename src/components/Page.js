@@ -10,17 +10,23 @@ const PageWrapper = styled.div`
 `;
 
 const Header = styled.div`
-  padding-top: 1.25rem;
+  padding-top: 5.25rem;
   background-color: black;
-  height: ${(props) => (props.alternativeMenu ? "18rem" : "13.4rem")};
+  height: ${(props) => (props.alternativeMenu ? "18rem" : "31.4rem")};
   position: relative;
+  @media (max-width: 1920px) {
+    padding-top: 10rem;
+    height: ${(props) => (props.alternativeMenu ? "16rem" : "10.5rem")};
+  }
   @media (max-width: 768px) {
     padding-top: 0.8rem;
+    height: ${(props) => (props.alternativeMenu ? "15rem" : "10.5rem")};
+  }
+  @media (max-width: 480px) {
     height: 7.5rem;
   }
-  @media (min-width: 1920px) {
-    padding-top: 10rem;
-    height: 35.4rem;
+  @media (max-width: 320px) {
+    height: 6.5rem;
   }
 `;
 
