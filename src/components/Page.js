@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
 import { menu } from "../data/data.json";
+import { useHistory } from "react-router-dom";
 
 const PageWrapper = styled.div`
   color: white;
@@ -12,17 +13,33 @@ const PageWrapper = styled.div`
 const Header = styled.div`
   padding-top: 5.25rem;
   background-color: black;
-  height: ${(props) => (props.alternativeMenu ? "18rem" : "31.4rem")};
+  height: ${(props) =>
+    props.alternativeMenu ? "36rem" : "31.4rem"}; //iMac 27"
   position: relative;
   @media (max-width: 1920px) {
-    padding-top: 10rem;
-    height: ${(props) => (props.alternativeMenu ? "16rem" : "10.5rem")};
+    // MacBook 13"
+    padding-top: 2.5rem;
+    height: 25.5rem;
+  }
+  @media (max-width: 1382px) {
+    // iPadPro Horizontal
+    height: ${(props) => (props.alternativeMenu ? "22rem" : "18rem")};
+  }
+  @media (max-width: 1024px) {
+    //iPadPro Vertical / iPad Horizontal
+    height: 18rem;
+  }
+  @media (max-width: 900px) {
+    //iPhoneX horizontal
+    height: 13rem;
   }
   @media (max-width: 768px) {
-    padding-top: 0.8rem;
+    //iPad Vertical iPhone6/7/8 Horizontal
     height: ${(props) => (props.alternativeMenu ? "15rem" : "10.5rem")};
   }
   @media (max-width: 480px) {
+    //iPhoneX/iPhone6/7/8 vertical
+    padding-top: 1.5rem;
     height: 7.5rem;
   }
   @media (max-width: 320px) {
@@ -59,19 +76,24 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const Page = ({children, alternativeMenu}) => {
+
+const Page = ({ children, alternativeMenu, onBackToHome  = () => {}}) => {
+  const history = useHistory();
+
+  const redirectToHome = () => {
+    onBackToHome();
+    history.push("/");
+  };
   return (
-      <PageWrapper>
-        <Header alternativeMenu={alternativeMenu}>
-          <Logo>
-            <LogoTitle />
-          </Logo>
-          {alternativeMenu ? alternativeMenu : <Menu items={menu} /> }
-        </Header>
-        <Container>
-          {children}
-        </Container>
-      </PageWrapper>
+    <PageWrapper>
+      <Header alternativeMenu={alternativeMenu}>
+        <Logo onClick={redirectToHome}>
+          <LogoTitle />
+        </Logo>
+        {alternativeMenu ? alternativeMenu : <Menu items={menu} />}
+      </Header>
+      <Container>{children}</Container>
+    </PageWrapper>
   );
 };
 
