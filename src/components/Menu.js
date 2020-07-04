@@ -3,14 +3,10 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Wrapper = styled.div`
-  margin-top: 5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
-  @media (max-width: 768px) {
-    margin-top: 2rem;
-  }
-  @media (min-width: 1920px) {
-    margin-top: 15rem;
-  }
 `;
 const Container = styled.ul`
   display: block;

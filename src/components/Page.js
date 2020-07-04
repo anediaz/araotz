@@ -13,6 +13,7 @@ const Header = styled.div`
   padding-top: 1.25rem;
   background-color: black;
   height: ${(props) => (props.alternativeMenu ? "18rem" : "13.4rem")};
+  position: relative;
   @media (max-width: 768px) {
     padding-top: 0.8rem;
     height: 7.5rem;
@@ -37,37 +38,12 @@ const Logo = styled.div`
 `;
 
 const LogoTitle = styled.div`
-  height: 5rem;
   padding: 0.5rem 0;
   content: url("./araotz/araotz.png");
   margin: 0 auto;
-  :before {
-    height: 4rem;
-    width: 241px;
-    padding: 0.5rem 0;
-    background-image: url("./araotz/araotz.png");
-    background-size: auto 4rem;
-    display: inline-block;
-    content: "";
-    margin: 0 auto;
-    background-repeat: no-repeat;
-  }
-  @media (max-width: 768px) {
-    height: 2.8rem;
-    :before {
-      height: 2.8rem;
-      width: 108px;
-      background-size: auto 1.8rem;
-    }
-  }
-  @media (min-width: 1920px) {
-    height: 15rem;
-    :before {
-      height: 15rem;
-      width: 422px;
-      background-size: auto 15rem;
-    }
-  }
+  width: 85%;
+  height: auto;
+
 `;
 
 const Container = styled.div`
