@@ -19,11 +19,8 @@ const Element = styled.li`
   position: relative;
   z-index: 100;
   a {
-    font-size: 1.3rem;
     text-decoration: none;
-    padding: 0.5rem 3rem;
     display: block;
-
     -webkit-transition: all 0.2s ease-in-out 0s;
     -moz-transition: all 0.2s ease-in-out 0s;
     -o-transition: all 0.2s ease-in-out 0s;
@@ -36,14 +33,34 @@ const Element = styled.li`
       color: black;
       background: white;
     }
-    @media (max-width: 768px) {
-      font-size: 0.6rem;
-      font-weight: 200;
-      padding: 0.5rem 0.8rem;
+    font-size: 3rem;
+    padding: 0.5rem 8rem;
+    @media (max-width: 1920px) {
+      // MacBook 13"
+      padding: 0.3rem 3rem;
+      font-size: 2rem;
     }
-    @media (min-width: 1920px) {
-      font-size: 3rem;
-      padding: 0.5rem 8rem;
+    @media (max-width: 1382px) {
+      // iPadPro Horizontal
+      font-size: 1rem;
+    }
+    @media (max-width: 1024px) {
+      //iPadPro Vertical / iPad Horizontal
+      font-size: 1rem;
+    }
+    @media (max-width: 900px) {
+      //iPhoneX horizontal
+    }
+    @media (max-width: 768px) {
+      //iPad Vertical iPhone6/7/8 Horizontal
+      font-size: .8rem;
+      font-weight: 200;
+      padding: 0.2rem 1.5rem;
+    }
+    @media (max-width: 480px) {
+      //iPhoneX/iPhone6/7/8 vertical
+    }
+    @media (max-width: 320px) {
     }
   }
 `;

@@ -11,7 +11,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: -4px;
+  bottom: -3px;
+  z-index: 1
 `;
 
 const MiniaturesContainer = styled.div`

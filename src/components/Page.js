@@ -8,6 +8,7 @@ const PageWrapper = styled.div`
   color: white;
   background-color: black;
   font-family: "Raleway", sans-serif;
+  min-height: 100vh;
 `;
 
 const Header = styled.div`
