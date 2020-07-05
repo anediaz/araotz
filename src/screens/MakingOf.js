@@ -24,8 +24,9 @@ const transformForGallery = result =>
   }));
 
 const configurations = [
-  { minWidth: 480, cols: 3, margin: 1 },
-  { maxWidth: 479, cols: 2, margin: 1 }
+  { minWidth: 0, maxWidth: 1381, cols: 3, margin: 1 },
+  { minWidth: 1382, maxWidth: 1920, cols: 3, margin: 1 },
+  { minWidth: 1921, cols: 3, margin: 4 },
 ];
 
 const MakingOf = ({photos = [], updatePhotos}) => {
