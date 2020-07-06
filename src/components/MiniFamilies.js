@@ -63,7 +63,7 @@ const Tooltip = styled.div`
 }`;
 
 const MiniFamilyImage = styled.img`
-  height: 9rem; //iMac 27"
+  height: 7rem; //iMac 27"
   width: auto;
   @media (max-width: 1920px) { // MacBook 13"
     height: 6rem;
