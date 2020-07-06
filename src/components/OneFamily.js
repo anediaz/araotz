@@ -15,18 +15,72 @@ const GalleryContainer = styled.div`
 
 const OneFamily = ({currentFamily }) => {
   const configurations = [
-    { minWidth: 1900, cols: 3, margin: 1 },
-    { maxWidth: 1899, cols: 2, margin: 1 }
-
+    {
+      lengths: [0],
+      configurations: [
+        { minWidth: 1900, cols: 3, margin: 1 },
+        { maxWidth: 1899, cols: 2, margin: 1 },
+      ],
+    },
+    {
+      lengths: [4, 5, 10, 13, 15, 19],
+      configurations:[
+        { maxWidth: 768, cols: 2, margin: 1 },
+        { minWidth: 769, cols: 5, margin: 1 },
+      ],
+    },
+    {
+      lengths: [6, 11],
+      configurations: [
+        { maxWidth: 768, cols: 2, margin: 1 },
+        { minWidth: 769, cols: 6, margin: 1 },
+      ],
+    },
+    {
+      lengths: [8],
+      configurations: [
+        { maxWidth: 768, cols: 2, margin: 1 },
+        { minWidth: 769, cols: 4, margin: 1 },
+      ],
+    },
+    {
+      lengths: [3],
+      configurations: [{ minWidth: 320, cols: 3, margin: 1 }],
+    },
+    {
+      lengths: [21],
+      configurations: [
+        { maxWidth: 768, cols: 3, margin: 1 },
+        { minWidth: 769, cols: 7, margin: 1 },
+      ],
+    },
+    {
+      lengths: [26],
+      configurations: [
+        { maxWidth: 768, cols: 2, margin: 1 },
+        { minWidth: 769, cols: 7, margin: 1 },
+      ],
+    }
   ];
 
-  return(
-  <OneFamilyContainer>
-    <GalleryContainer>
-      <Gallery photos={currentFamily.photos} configurations={configurations} />
-    </GalleryContainer>
-  </OneFamilyContainer>)
+  const findConfigurations = () =>{
+    const found =
+      configurations.find(
+        (config) => config.lengths.indexOf(currentFamily.photos.length) > -1
+      ) || configurations[0];
+    return found.configurations
+  }
+
+  return (
+    <OneFamilyContainer>
+      <GalleryContainer>
+        <Gallery
+          photos={currentFamily.photos}
+          configurations={findConfigurations()}
+        />
+      </GalleryContainer>
+    </OneFamilyContainer>
+  );
 }
 
 export default OneFamily;
-
