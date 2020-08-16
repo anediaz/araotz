@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
-import { menu } from "../data/data.json";
+import { menu, webSiteInfo } from "../data/data.json";
 import { useHistory } from "react-router-dom";
 
 const PageWrapper = styled.div`
@@ -75,8 +75,35 @@ const Container = styled.div`
   float: left;
   margin: 0 auto;
   background-color: white;
+  min-height: calc(100vh - 3rem);
 `;
 
+const Footer = styled.div`
+  clear: both;
+  position: relative;
+  height: 3rem;
+  margin-top: -3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1rem;
+  a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+  }
+`;
+
+const getFooter = () => {
+  const a = (
+    <a href={webSiteInfo.url} target="_blank" rel="noopener noreferrer" key={2}>
+      {webSiteInfo.author}
+    </a>
+  );
+  const split = webSiteInfo.text.split("$author");
+  return [<div key={1}>{split[0]}</div>, a, <div key={3}>{split[1]}</div>];
+}
 
 const Page = ({ children, alternativeMenu, onBackToHome  = () => {}}) => {
   const history = useHistory();
@@ -94,6 +121,7 @@ const Page = ({ children, alternativeMenu, onBackToHome  = () => {}}) => {
         {alternativeMenu ? alternativeMenu : <Menu items={menu} />}
       </Header>
       <Container>{children}</Container>
+      <Footer>{getFooter()}</Footer>
     </PageWrapper>
   );
 };
