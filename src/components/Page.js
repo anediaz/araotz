@@ -80,9 +80,7 @@ const Container = styled.div`
 
 const Footer = styled.div`
   clear: both;
-  position: relative;
   height: 3rem;
-  margin-top: -3rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -93,16 +91,20 @@ const Footer = styled.div`
     font-style: italic;
     font-weight: bold;
   }
+  @media screen and (max-width: 900px) {
+    font-size: 0.9rem;
+    padding: 1.2rem 1rem 0 0;
+  }
 `;
 
 const getFooter = () => {
-  const a = (
+  const clickableText = (
     <a href={webSiteInfo.url} target="_blank" rel="noopener noreferrer" key={2}>
       {webSiteInfo.author}
     </a>
   );
-  const split = webSiteInfo.text.split("$author");
-  return [<div key={1}>{split[0]}</div>, a, <div key={3}>{split[1]}</div>];
+  const footerText = webSiteInfo.text.split("$author");
+  return [footerText[0] && (<div key={1}>{footerText[0]}</div>), clickableText, footerText[1] && (<div key={3}>{footerText[1]}</div>)];
 }
 
 const Page = ({ children, alternativeMenu, onBackToHome  = () => {}}) => {
