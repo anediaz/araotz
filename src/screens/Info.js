@@ -30,7 +30,7 @@ const Content = styled.div`
 const Text = styled.div`
   text-align: left;
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   p {
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
