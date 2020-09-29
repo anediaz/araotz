@@ -5,19 +5,27 @@ import LanguageSelector from "../components/LanguageSelector";
 import { info } from "../data/data";
 
 const Wrapper = styled.div`
-  margin-top: 0.2rem;
   padding-top: 2rem;
   height: 100%;
   background-color: black;
+  border-top: 0.2rem solid white;
+  border-bottom: 0.2rem solid white;
   @media (min-width: 1920px) {
     padding-top: 12rem;
+  }
+  @media (max-width: 1382px) {
+    // iPadPro Horizontal
+    border-top: 0.5px solid white;
+    border-bottom: 0.5px solid white;
   }
 `;
 
 const Content = styled.div`
   width: 50%;
   margin: 0 auto;
-  border: 1px solid white;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
   @media (max-width: 768px) {
     width: 70%;
     padding-top: 1rem;
@@ -43,7 +51,7 @@ const Text = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     p {
       margin-bottom: 1.1rem;
       margin-left: 0.9rem;
@@ -90,7 +98,7 @@ const Line = styled.div`
   justify-content: space-between;
   line-height: 2rem;
   @media (max-width: 768px) {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     flex-direction: column;
     line-height: 1.2rem;
   }

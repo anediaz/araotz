@@ -13,14 +13,24 @@ import OneFamily from "../components/OneFamily";
 import MiniFamilies from "../components/MiniFamilies";
 
 const Wrapper = styled.div`
-  margin-top: 0.2rem;
   height: 100%;
   color: white;
   position: relative;
+  background-color: white;
+  border-top: 0.2rem solid white;
+  border-bottom: 0.2rem solid white;
+  @media (max-width: 1382px) {
+    // iPadPro Horizontal
+    border-top: 0.5px solid white;
+    border-bottom: 0.5px solid white;
+  }
 `;
 
 const FamiliesContainer = styled.div`
   height: 100%;
+  div {
+    margin-top: 0;
+  }
 `;
 
 const familiesSizes = getFamiliesSizes();

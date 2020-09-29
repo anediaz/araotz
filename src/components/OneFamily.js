@@ -10,7 +10,18 @@ const OneFamilyContainer = styled.div`
 `;
 
 const GalleryContainer = styled.div`
-  height : calc(100% - 5rem);
+  height: calc(100% - 5rem);
+  background-color: white;
+  border-top: 0.2rem solid white;
+  border-bottom: 0.2rem solid white;
+  @media (max-width: 1382px) {
+    // iPadPro Horizontal
+    border-top: 0.5px solid white;
+    border-bottom: 0.5px solid white;
+  }
+  div {
+    margin-top: 0;
+  }
 `;
 
 const OneFamily = ({currentFamily }) => {

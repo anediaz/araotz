@@ -74,7 +74,7 @@ const Container = styled.div`
   width: 100%;
   float: left;
   margin: 0 auto;
-  background-color: white;
+  background-color: black;
   min-height: calc(100vh - 3rem);
 `;
 
