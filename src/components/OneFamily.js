@@ -12,12 +12,9 @@ const OneFamilyContainer = styled.div`
 const GalleryContainer = styled.div`
   height: calc(100% - 5rem);
   background-color: white;
-  border-top: 0.2rem solid white;
-  border-bottom: 0.2rem solid white;
   @media (max-width: 1382px) {
     // iPadPro Horizontal
-    border-top: 0.5px solid white;
-    border-bottom: 0.5px solid white;
+    
   }
   div {
     margin-top: 0;
@@ -29,47 +26,9 @@ const OneFamily = ({currentFamily }) => {
     {
       lengths: [0],
       configurations: [
-        { minWidth: 1900, cols: 3, margin: 1 },
-        { maxWidth: 1899, cols: 2, margin: 1 },
-      ],
-    },
-    {
-      lengths: [4, 5, 10, 13, 15, 19],
-      configurations:[
         { maxWidth: 768, cols: 2, margin: 1 },
-        { minWidth: 769, cols: 5, margin: 1 },
-      ],
-    },
-    {
-      lengths: [6, 11],
-      configurations: [
-        { maxWidth: 768, cols: 2, margin: 1 },
-        { minWidth: 769, cols: 6, margin: 1 },
-      ],
-    },
-    {
-      lengths: [8],
-      configurations: [
-        { maxWidth: 768, cols: 2, margin: 1 },
-        { minWidth: 769, cols: 4, margin: 1 },
-      ],
-    },
-    {
-      lengths: [3],
-      configurations: [{ minWidth: 320, cols: 3, margin: 1 }],
-    },
-    {
-      lengths: [21],
-      configurations: [
-        { maxWidth: 768, cols: 3, margin: 1 },
-        { minWidth: 769, cols: 7, margin: 1 },
-      ],
-    },
-    {
-      lengths: [26],
-      configurations: [
-        { maxWidth: 768, cols: 2, margin: 1 },
-        { minWidth: 769, cols: 7, margin: 1 },
+        { minWidth: 769, maxWidth: 1920, cols: 3, margin: 1 },
+        { minWidth: 1921, cols: 5, margin: 1 },
       ],
     }
   ];
