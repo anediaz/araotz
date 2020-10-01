@@ -3,6 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Router from "./Router";
 import * as serviceWorker from "./serviceWorker";
+import { googleTrackId } from "./constants/constants";
+import ReactGA from "react-ga";
+
+const initializeReactGA = () => {
+  ReactGA.initialize(googleTrackId);
+  ReactGA.pageview("/", "araozko-familiak-tracker", "araozko familiak");
+};
+
+initializeReactGA();
 
 ReactDOM.render(
   <React.StrictMode>

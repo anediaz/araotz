@@ -27,3 +27,6 @@ export const SIZE_LABELS = {
 export const ERROR_TYPES = {
   flickrLoading: "Photo loading from Flickr",
 };
+
+// Google Analytics
+export const googleTrackId = "UA-179302321-1";
