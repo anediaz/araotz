@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Page from "../components/Page";
-import LanguageSelector from "../components/LanguageSelector";
 import { info } from "../data/data";
 
 const Wrapper = styled.div`
@@ -113,33 +112,25 @@ const A = styled.a`
 `;
 const Info = () => {
   const { more } = info;
-  const [language, setLanguage] = useState("EU");
-  const languageClickHandler = (selectedLanguage) =>
-    setLanguage(selectedLanguage);
+
   return (
     <Page>
       <Wrapper>
-        <LanguageSelector
-          language={language}
-          handleLanguageClick={languageClickHandler}
-        />
-
         <Content>
           <Text>
-            {info[language].text.map((paragraph, key) => (
+            {info.text.map((paragraph, key) => (
               <p key={`paragraph${key}`}>{paragraph}</p>
             ))}
           </Text>
-
           <Contact>
-            <Title>{info[language].contact.title}</Title>
+            <Title>{info.contact.title}</Title>
             <Line>
               <div>{more.name}</div>
               <div>{more.phone}</div>
             </Line>
             <Line>
               <div>
-                {info[language].contact.mail}:{" "}
+                {info.contact.mail}:{" "}
                 <A href={`mailto:${more.mail}`} target="_top">
                   {more.mail}
                 </A>

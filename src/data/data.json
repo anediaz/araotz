@@ -44,50 +44,14 @@
     }
   ],
   "info": {
-    "EU": {
-      "text": [
+    "text": [
         "Erretratuak aurkituko dituzu toki honetan, Araotzen jatorria duten 22 familitako senideen erretratuak. Familia bakoitzak Araozko baserri batean du jatorria, eta hiruzpalau belaunalditako senideek osatzen dute. Familiak baserriarekin duen lotura oso handia bada ere, gaur egun baserri horietan ez da inor bizi, eta bigarren etxebizitza moduan erabiltzen dira. Izan ere, aspalditik oso biztanle gutxi dauzka Araotzek, araoztar gehien-gehienak Oñatin bizi dira eta. Edonola ere, esan beharra dago hau ez dela Araozko erretratua, erdiak inguru baino ez dira agertzen eta.",
         "2019an eginda daude erretratuak, Araozko frontoian eginda ere, familia batekoak izan ezik euren baserrian egin ziren eta; edizio lanak, berriz, 2020ko udaberrian, Covid-19aren itxialdian; eta webgunea, 2020ko udaberri-uda aldean.",
         "Araoztarren eskuzabaltasuna, laguntza eta partaidetzari esker gauzatu ahal izan da proiektua. Eskerrik asko, beraz, denei. Araozko auzo batzordeko kideen laguntza ere ezinbestekoa izan da, jakina, lan hau egiteko orduan. Eskerrik asko, beraz, Koldo Zumalderi, Kerman Urkiari eta Luis Zumalderi. Webgunearen diseinua Ane Diaz de Tuestak egin du. Azkenik, argazkiak Joxefe Diaz de Tuestak egin ditu."
       ],
-      "contact": {
+    "contact": {
         "title": "Kontaktua",
         "mail": "e-posta"
-      }
-    },
-    "ES": {
-      "text": [
-        "Araotz, ese es el nombre de este proyecto. Araotzeko familiak es una colección de retratos"
-      ],
-      "contact": {
-        "title": "Contacto",
-        "mail": "e-mail"
-      }
-    },
-    "EN": {
-      "text": [
-        "This project is called Araotz, it is a of portraits of families from Araotz"
-      ],
-      "contact": {
-        "title": "Contact",
-        "mail": "email"
-      }
-    },
-    "FR": {
-      "text": [
-        "Araotz est le nom de ce projet, qui est une collection de portraits des familles de Araotz"
-      ],
-      "contact": {
-        "title": "Contact",
-        "mail": "email"
-      }
-    },
-    "CA": {
-      "text": ["Araotz"],
-      "contact": {
-        "title": "Contacte",
-        "mail": "e-mail"
-      }
     },
     "more": {
       "name": "Joxefe Diaz de Tuesta",
