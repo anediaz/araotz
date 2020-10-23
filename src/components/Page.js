@@ -63,7 +63,7 @@ const Logo = styled.div`
 
 const LogoTitle = styled.div`
   padding: 0.5rem 0;
-  content: url("./araotz/araotz.png");
+  content: url("./araotz.png");
   margin: 0 auto;
   width: 85%;
   height: auto;
