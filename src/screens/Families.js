@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import Gallery from "react-ikusi";
 import Page from "../components/Page";
 import FlickrAPI from "../services/FlickrAPI";
@@ -12,26 +11,8 @@ import { home } from "../data/data.json";
 import OneFamily from "../components/OneFamily";
 import MiniFamilies from "../components/MiniFamilies";
 
-const Wrapper = styled.div`
-  height: 100%;
-  color: white;
-  position: relative;
-  background-color: white;
-  border-top: 0.2rem solid white;
-  border-bottom: 0.2rem solid white;
-  @media (max-width: 1382px) {
-    // iPadPro Horizontal
-    border-top: 0.5px solid white;
-    border-bottom: 0.5px solid white;
-  }
-`;
-
-const FamiliesContainer = styled.div`
-  height: 100%;
-  div {
-    margin-top: 0;
-  }
-`;
+import './families.css';
+const BLOCK = "families-screen";
 
 const familiesSizes = getFamiliesSizes();
 const miniFamiliesSizes = getMiniFamiliesSizes();
@@ -119,10 +100,10 @@ const Families = ({ photos = [], updatePhotos }) => {
       alternativeMenu={alternativeMenu}
       onBackToHome={() => setSelectedFamily(null)}
     >
-      <Wrapper>
+      <div className={BLOCK}>
         {photos && photos.length ? (
           !selectedFamily ? (
-            <FamiliesContainer className="familiesContainer">
+            <div className={`${BLOCK}__container`}>
               <Gallery
                 className="gallery"
                 photos={photos.map((p) => p.gallery)}
@@ -130,14 +111,14 @@ const Families = ({ photos = [], updatePhotos }) => {
                 onClickPhoto={openFamily}
                 withLightbox={false}
               />
-            </FamiliesContainer>
+            </div>
           ) : (
             <OneFamily currentFamily={selectedFamily} />
           )
         ) : (
           ""
         )}
-      </Wrapper>
+      </div>
     </Page>
   );
 };

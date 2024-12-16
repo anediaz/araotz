@@ -1,25 +1,9 @@
 import React from "react";
 
 import Gallery from 'react-ikusi';
-import styled from "styled-components";
+import './one-family.css'
 
-
-
-const OneFamilyContainer = styled.div`
-  height: 100%;
-`;
-
-const GalleryContainer = styled.div`
-  height: calc(100% - 5rem);
-  background-color: white;
-  @media (max-width: 1382px) {
-    // iPadPro Horizontal
-    
-  }
-  div {
-    margin-top: 0;
-  }
-`;
+const BLOCK = 'one-family';
 
 const OneFamily = ({currentFamily }) => {
   const configurations = [
@@ -42,14 +26,14 @@ const OneFamily = ({currentFamily }) => {
   }
 
   return (
-    <OneFamilyContainer>
-      <GalleryContainer>
+    <div className={BLOCK}>
+      <div className={`${BLOCK}__gallery-container`}>
         <Gallery
           photos={currentFamily.photos}
           configurations={findConfigurations()}
         />
-      </GalleryContainer>
-    </OneFamilyContainer>
+      </div>
+    </div>
   );
 }
 

@@ -1,26 +1,12 @@
 import React, {useEffect} from "react";
 import Gallery from 'react-ikusi';
-import styled from "styled-components";
 import FlickrAPI from "../services/FlickrAPI";
 import Page from '../components/Page';
 import { EXTRAS } from "../constants/constants";
 import { makingOf } from "../data/data.json";
 
-
-const Wrapper = styled.div`
-  height: 100%;
-  background-color: white;
-  border-top: 0.2rem solid white;
-  border-bottom: 0.2rem solid white;
-  @media (max-width: 1382px) {
-    // iPadPro Horizontal
-    border-top: 0.5px solid white;
-    border-bottom: 0.5px solid white;
-  }
-  div {
-    margin-top: 0;
-  }
-`;
+import './making-of.css';
+const BLOCK = 'making-of-screen';
 
 const { large1024: def, large1024: big } = EXTRAS;
 const urlsBySize = `${def.url},${big.url}`;
@@ -52,9 +38,9 @@ const MakingOf = ({photos = [], updatePhotos}) => {
 
   return (
     <Page>
-      <Wrapper>
+      <div className={BLOCK}>
         <Gallery className="gallery" photos={photos} configurations={configurations}/>
-      </Wrapper>
+      </div>
     </Page>
   );
 };

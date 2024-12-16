@@ -1,136 +1,14 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import Icon from '@mdi/react';
 import { mdiCloseCircle, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 import useWindowDimensions from '../hooks/useWindowDimensions'
+import './mini-families.css';
 
+const BLOCK = 'mini-families';
 
-const Wrapper = styled.div`
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: -3px;
-  z-index: 1
-`;
-
-const MiniaturesContainer = styled.div`
-  height: 100%;
-  max-width: 90%;
-  background-color: white;
-  display: flex;
-  padding: .2rem .2rem 0 .2rem;
-  position: relative;
-`;
-
-const Carousel = styled.div`
-  width: 100%
-  height: 100%;
-  display: flex;
-  margin: 0 auto;
-`;
-
-const Tooltip = styled.div`
-  visibility: hidden;
-  width: 100%;
-  background-color: white;
-  color: black;
-  text-align: center;
-  padding: .3rem;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity .6s;
-  left: 0;
-  overflow-wrap: break-word;
-  bottom: calc(9rem + 1rem); //iMac 27" height+borders  
-  font-size: 1.2rem;
-  @media (max-width: 1920px) {
-    bottom: calc(6rem + 1rem); 
-  }
-  &:after{
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-  }
-}`;
-
-const MiniFamilyImage = styled.img`
-  height: 7rem; //iMac 27"
-  width: auto;
-  @media (max-width: 1920px) { // MacBook 13"
-    height: 6rem;
-  }
-  @media (max-width: 1382px) { // iPadPro Horizontal
-    height: 5rem;
-  }
-  @media (max-width: 1024px) { //iPadPro Vertical / iPad Horizontal
-    height: 5em;
-  }
-  @media (max-width: 900px) {
-    height: 5rem;
-  }
-  @media (max-width: 768px) { //iPad Vertical
-    height: 4rem;
-  }
-`;
-
-const Item = styled.div`
-  text-align: center;
-  margin: 0 .1rem;
-  position: relative;
-  &:hover{
-    cursor: pointer;
-    ${Tooltip} {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-`;
 const isMobileDevice = () => navigator.userAgent.indexOf("Mobile") !== -1 &&
     navigator.userAgent.indexOf("iPad") === -1
 
-const CloseIconStyled = styled(Icon)`
-  path{
-    stroke: black;
-  }
-  &:hover{
-    cursor: pointer;
-  }
-`;
-
-const CloseIconMiniStyled = styled(CloseIconStyled)`
-  path {
-    stroke: black;
-  }
-  position: absolute;
-  top: -11px;
-  left: -13px;
-  z-index: 5000;
-  height: 30px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const ArrowIconStyled = styled(Icon)`
-  position: absolute;
-  top: 15px;
-  left: ${(props) => props.position === "left" && "-45px"};
-  right: ${(props) => props.position === "right" && "-45px"};
-  z-index: 5000;
-  height: calc(100% - 1.5rem) !important;
-  &:hover {
-    cursor: pointer;
-  }
-`;
 
 const photoNb = [
   {width : 768, nb: 6}, //ipad vertical
@@ -160,10 +38,10 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
   }
 
   const getMiniFamily = (family,index) => {
-    return <Item key={index} onClick={() => onFamilyClick(index)}>
-      <MiniFamilyImage src={family.miniPicture}/>
-      <Tooltip>{family.name}</Tooltip>
-    </Item>
+    return <div className={`${BLOCK}__item`} key={index} onClick={() => onFamilyClick(index)}>
+      <img alt={family.name} className={`${BLOCK}__image`} src={family.miniPicture}/>
+      <div className={`${BLOCK}__tooltip`}>{family.name}</div>
+    </div>
   }
 
   const slidePhotos = (direction) => {
@@ -179,42 +57,45 @@ const MiniFamilies = ({onClose, currentFamily, allFamilies, onFamilyClick}) => {
   }
 
   return (
-    <Wrapper>
+    <div className={BLOCK}>
       {isMobileDevice() ? (
         <div>
-          <CloseIconStyled
+          <Icon
             path={mdiCloseCircle}
             color="white"
             size={1.2}
             onClick={onClose}
+            className={`${BLOCK}__close-icon`}
           />
         </div>
       ) : (
-        <MiniaturesContainer>
-          <CloseIconMiniStyled
+        <div className={`${BLOCK}__container`}>
+          <Icon
             path={mdiCloseCircle}
             color="white"
             size={1}
             onClick={onClose}
+            className={`${BLOCK}__close-icon ${BLOCK}__close-icon--mini`}
           />
-          <ArrowIconStyled
+          <Icon
             path={mdiChevronLeft}
             color="white"
             size={2}
-            position="left"
             onClick={() => slidePhotos("left")}
+            className={`${BLOCK}__arrow--left` }
           />
-          <Carousel>{displayMiniFamilies()}</Carousel>
-          <ArrowIconStyled
+          <div className={`${BLOCK}__carousel`}>{displayMiniFamilies()}</div>
+          <Icon
             path={mdiChevronRight}
             color="white"
             size={2}
             position="right"
             onClick={() => slidePhotos("right")}
+            className={`${BLOCK}__arrow--right` }
           />
-        </MiniaturesContainer>
+        </div>
       )}
-    </Wrapper>
+    </div>
   );
     }
 

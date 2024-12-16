@@ -1,0 +1,115 @@
+.gatza-page {
+    color: white;
+    background-color: black;
+    font-family: "Raleway", sans-serif;
+    min-height: 100vh;
+}
+
+.gatza-page__logo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.gatza-page__logo:hover {
+    cursor: pointer;
+}
+.gatza-page__logo-title {
+    padding: 0.5rem 0;
+    margin: 0 auto;
+    width: 85%;
+    height: auto;
+    content: url("./araotz.png");
+}
+
+.gatza-page__container {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    background-color: black;
+    min-height: calc(100vh - 3rem);
+}
+
+.gatza-page__footer {
+    clear: both;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem;
+}
+
+.gatza-page__footer a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.gatza-page__header, .gatza-page__header-alternative {
+    padding-top: 5.25rem;
+    background-color: black;
+    height: 31.4rem; /* iMac 27" */
+    position: relative;
+}
+
+.gatza-page__header-alternative {
+    height: 36rem;
+}
+
+@media (max-width: 1920px) {
+    /* MacBook 13" */
+    .gatza-page__header, .gatza-page__header-alternative {
+        padding-top: 2.5rem;
+        height: 25.5rem;
+    }
+}
+@media (max-width: 1382px) {
+    /* iPadPro Horizontal */
+    .gatza-page__header {
+        height: 18rem;
+    }
+    .gatza-page__header-alternative {
+        height: 22rem;
+    }
+}
+@media (max-width: 1024px) {
+    /* iPadPro Vertical / iPad Horizontal */
+    .gatza-page__header, .gatza-page__header-alternative {
+        height: 18rem;
+    }
+}
+@media (max-width: 900px) {
+    /* iPhoneX horizontal */
+    .gatza-page__header, .gatza-page__header-alternative {
+        height: 13rem;
+    }
+    .gatza-page__footer {
+        font-size: 0.9rem;
+        padding: 1.2rem 1rem 0 0;
+    }
+}
+@media (max-width: 768px) {
+    /*iPad Vertical iPhone6/7/8 Horizontal*/
+    .gatza-page__header {
+        height:10.5rem;
+    }
+    .gatza-page__header-alternative {
+        height: 15rem;
+    }
+    .gatza-page__logo {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 480px) {
+    /* iPhoneX/iPhone6/7/8 vertical */
+    .gatza-page__header, .gatza-page__header-alternative {
+        padding-top: 1.5rem;
+        height: 7.5rem;
+    }
+}
+@media (max-width: 320px) {
+    .gatza-page__header, .gatza-page__header-alternative {
+        height: 6.5rem;
+    }
+}
