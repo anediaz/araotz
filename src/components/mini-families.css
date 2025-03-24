@@ -1,0 +1,142 @@
+.mini-families {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -3px;
+    z-index: 1;
+}
+
+.mini-families__container {
+    height: 100%;
+    max-width: 90%;
+    background-color: white;
+    display: flex;
+    padding: .2rem .2rem 0 .2rem;
+    position: relative;
+}
+
+.mini-families__carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.mini-families__item {
+    text-align: center;
+    margin: 0 .1rem;
+    position: relative;
+}
+
+.mini-families__item:hover {
+    cursor: pointer;    
+}
+
+.mini-families__item:hover .mini-families__tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mini-families__item .mini-families__tooltip {
+    visibility: hidden;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: .3rem;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .6s;
+    left: 0;
+    overflow-wrap: break-word;
+    bottom: calc(9rem + 1rem); 
+    font-size: 1.2rem;    
+}
+
+.mini-families__item .mini-families__tooltip:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.mini-families__image {
+    /* iMac 27" */
+    height: 7rem; 
+    width: auto;
+}
+
+.mini-families__arrow--left, .mini-families__arrow--right {
+    position: absolute;
+    top: 15px;
+    z-index: 5000;
+    height: calc(100% - 1.5rem) !important;
+}
+.mini-families__arrow--left {
+    left:-45px;
+}
+.mini-families__arrow--right {
+    right:-45px;
+}
+.mini-families__arrow--right:hover, .mini-families__arrow--left:hover {
+   cursor: pointer;  
+}
+
+.mini-families__close-icon {
+    path{
+        stroke: black;
+    }
+}
+.mini-families__close-icon:hover{
+    cursor: pointer;
+}
+.mini-families__close-icon--mini {
+    path {
+        stroke: black;
+    }
+    position: absolute;
+    top: -11px;
+    left: -13px;
+    z-index: 5000;
+    height: 30px;  
+}
+
+@media (max-width: 1920px) {
+    .mini-families__item .mini-families__tooltip {
+        bottom: calc(6rem + 1rem); 
+    }
+    /* MacBook 13" */
+    .mini-families__image {
+        height: 6rem;
+    }
+}
+@media (max-width: 1382px) {
+    /* iPadPro Horizontal */
+    .mini-families__image {
+        height: 5rem;
+    }
+}
+@media (max-width: 1024px) {
+    /* iPadPro Vertical / iPad Horizontal */
+    .mini-families__image {
+        height: 5em;
+    }
+}
+@media (max-width: 900px) {
+    .mini-families__image {
+        height: 5rem;
+    }
+}
+@media (max-width: 768px) { /*iPad Vertical */
+    .mini-families__image {
+        height: 4rem;
+    }
+}

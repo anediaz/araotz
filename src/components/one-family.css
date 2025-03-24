@@ -1,0 +1,9 @@
+.one-family {
+    height: 100%;    
+}
+
+.one-family__gallery-container {
+    height: calc(100% - 5rem);
+    background-color: white;
+}
+
