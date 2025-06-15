@@ -1,0 +1,112 @@
+// Types
+export interface Family {
+    coverId: string;
+    photosetId: string;
+    name: string;
+}
+
+export interface HomeData {
+    families: Family[];
+}
+
+export interface MenuItem {
+    id: string;
+    text: string;
+    path: string;
+    home?: boolean;
+}
+
+export interface InfoData {
+    text: string[];
+    contact: {
+        title: string;
+        mail: string;
+    };
+    more: {
+        name: string;
+        phone: string;
+        mail: string;
+        site: string;
+    };
+}
+
+export interface WebSiteInfo {
+    author: string;
+    text: string;
+    url: string;
+}
+
+export interface AraotzData {
+    home: HomeData;
+    makingOf: string;
+    menu: MenuItem[];
+    info: InfoData;
+    webSiteInfo: WebSiteInfo;
+}
+
+// Data
+export const home: HomeData = {
+    families: [
+        { coverId: "49959611108", photosetId: "72157714537142516", name: "Lazkano-Ibabe" },
+        { coverId: "49960322932", photosetId: "72157714538758167", name: "Agirre-Bergara" },
+        { coverId: "49959515208", photosetId: "72157714537981293", name: "Pereda-Lezeta" },
+        { coverId: "49959503178", photosetId: "72157714536787291", name: "Auzmendi-Zumalde" },
+        { coverId: "49934383026", photosetId: "72157714449958063", name: "Bilbatua-Rodriguez" },
+        { coverId: "49933720531", photosetId: "72157714447484653", name: "Zumalde-Barrena" },
+        { coverId: "49933160718", photosetId: "72157714447963992", name: "Uriarte-Madinabeitia" },
+        { coverId: "49933155518", photosetId: "72157714446231096", name: "Mugartza-Aranburu" },
+        { coverId: "49933660396", photosetId: "72157714446217726", name: "Igartua-Zumalde" },
+        { coverId: "49933656606", photosetId: "72157714447885987", name: "Zumalde-Ibabe" },
+        { coverId: "49933638796", photosetId: "72157714447222953", name: "Azkoitia-Guridi" },
+        { coverId: "49933922512", photosetId: "72157714447041908", name: "Orueta-Cueva" },
+        { coverId: "49933082748", photosetId: "72157714445877131", name: "Goitia-Unzurrunzaga" },
+        { coverId: "49933891022", photosetId: "72157714445841101", name: "Erostabe-Galdos" },
+        { coverId: "49933051413", photosetId: "72157714447472112", name: "Ibabe-Uriarte" },
+        { coverId: "49933554221", photosetId: "72157714445739926", name: "Bolinaga-Erostabe" },
+        { coverId: "49933029428", photosetId: "72157714447388062", name: "Beitia-Barrena" },
+        { coverId: "49895045147", photosetId: "72157714304397326", name: "Urkia-Goitia" },
+        { coverId: "49895010792", photosetId: "72157714303130513", name: "Zumalde-Lasagabaster" },
+        { coverId: "49894152368", photosetId: "72157714301942166", name: "Guridi-Grisaleña" },
+        { coverId: "49784600151", photosetId: "72157713926881598", name: "Zumalde-Zumalde" }
+    ]
+};
+
+export const makingOf = "72157714754671087";
+
+export const menu: MenuItem[] = [
+    { id: "home", text: "Hasiera", path: "/", home: true },
+    { id: "makingof", text: "Making of", path: "/makingof" },
+    { id: "info", text: "Info", path: "/info" }
+];
+
+export const info: InfoData = {
+    text: [
+        "Erretratuak aurkituko dituzu toki honetan, Araotzen jatorria duten 22 familitako senideen erretratuak. Familia bakoitzak Araozko baserri batean du jatorria, eta hiruzpalau belaunalditako senideek osatzen dute. Familiak baserriarekin duen lotura oso handia bada ere, gaur egun baserri horietan ez da inor bizi, eta bigarren etxebizitza moduan erabiltzen dira. Izan ere, aspalditik oso biztanle gutxi dauzka Araotzek, araoztar gehien-gehienak Oñatin bizi dira eta. Edonola ere, esan beharra dago hau ez dela Araozko erretratua, erdiak inguru baino ez dira agertzen eta.",
+        "2019an eginda daude erretratuak, Araozko frontoian eginda ere, familia batekoak izan ezik euren baserrian egin ziren eta; edizio lanak, berriz, 2020ko udaberrian, Covid-19aren itxialdian; eta webgunea, 2020ko udaberri-uda aldean.",
+        "Araoztarren eskuzabaltasuna, laguntza eta partaidetzari esker gauzatu ahal izan da proiektua. Eskerrik asko, beraz, denei. Araozko auzo batzordeko kideen laguntza ere ezinbestekoa izan da, jakina, lan hau egiteko orduan. Eskerrik asko, beraz, Koldo Zumalderi, Kerman Urkiari eta Luis Zumalderi. Webgunearen diseinua Ane Diaz de Tuestak egin du. Azkenik, argazkiak Joxefe Diaz de Tuestak egin ditu."
+    ],
+    contact: {
+        title: "Kontaktua",
+        mail: "e-posta"
+    },
+    more: {
+        name: "Joxefe Diaz de Tuesta",
+        phone: "+34 677 536 846",
+        mail: "arrasateargitan@gmail.com",
+        site: "https://www.flickr.com/photos/atauri"
+    }
+};
+
+export const webSiteInfo: WebSiteInfo = {
+    author: "Ane Diaz de Tuesta",
+    text: "$authork egindako webgunea",
+    url: "http://www.anediaz.com"
+};
+
+export const araotzData: AraotzData = {
+    home,
+    makingOf,
+    menu,
+    info,
+    webSiteInfo
+}; 

@@ -1,0 +1,57 @@
+.menu-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-container {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.menu-element {
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+}
+
+.menu-element a {
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease-in-out 0s;
+  color: white;
+  background: none;
+  font-size: 3rem;
+  padding: 0.5rem 8rem;
+}
+.menu-element a.active,
+.menu-element a:hover {
+  color: black;
+  background: white;
+}
+
+@media (max-width: 1920px) {
+  .menu-element a {
+    padding: 0.3rem 3rem;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1382px) {
+  .menu-element a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .menu-element a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu-element a {
+    font-size: 0.8rem;
+    font-weight: 200;
+    padding: 0.2rem 1.5rem;
+  }
+} 

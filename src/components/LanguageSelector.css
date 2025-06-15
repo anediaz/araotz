@@ -1,0 +1,53 @@
+.language-selector-wrapper {
+  width: 50%;
+  margin: 0 auto;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .language-selector-wrapper {
+    font-size: 0.7rem;
+    width: 80%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .language-selector-wrapper {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .language-selector-wrapper {
+    width: 60%;
+    font-size: 2.5rem;
+    height: 4.4rem;
+    line-height: 4.4rem;
+  }
+}
+
+.language-selector-content {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.language-selector-element {
+  list-style-type: none;
+  display: inline;
+  opacity: 0.8;
+}
+.language-selector-element.active {
+  opacity: 1;
+  font-weight: 600;
+}
+.language-selector-element:hover {
+  cursor: pointer;
+}
+.language-selector-element:not(:first-child):before {
+  content: " | ";
+} 

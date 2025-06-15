@@ -1,0 +1,138 @@
+.mini-families-wrapper {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -3px;
+  z-index: 1;
+}
+
+.mini-families-miniatures-container {
+  height: 100%;
+  max-width: 90%;
+  background-color: white;
+  display: flex;
+  padding: .2rem .2rem 0 .2rem;
+  position: relative;
+}
+
+.mini-families-carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.mini-families-tooltip {
+  visibility: hidden;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: .3rem;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .6s;
+  left: 0;
+  overflow-wrap: break-word;
+  bottom: calc(9rem + 1rem);
+  font-size: 1.2rem;
+}
+@media (max-width: 1920px) {
+  .mini-families-tooltip {
+    bottom: calc(6rem + 1rem);
+  }
+}
+.mini-families-tooltip:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.mini-families-image {
+  height: 7rem;
+  width: auto;
+}
+@media (max-width: 1920px) {
+  .mini-families-image {
+    height: 6rem;
+  }
+}
+@media (max-width: 1382px) {
+  .mini-families-image {
+    height: 5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .mini-families-image {
+    height: 5em;
+  }
+}
+@media (max-width: 900px) {
+  .mini-families-image {
+    height: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .mini-families-image {
+    height: 4rem;
+  }
+}
+
+.mini-families-item {
+  text-align: center;
+  margin: 0 .1rem;
+  position: relative;
+}
+.mini-families-item:hover {
+  cursor: pointer;
+}
+.mini-families-item:hover .mini-families-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mini-families-close-icon path {
+  stroke: black;
+}
+.mini-families-close-icon:hover {
+  cursor: pointer;
+}
+
+.mini-families-close-icon-mini path {
+  stroke: black;
+}
+.mini-families-close-icon-mini {
+  position: absolute;
+  top: -11px;
+  left: -13px;
+  z-index: 5000;
+  height: 30px;
+}
+.mini-families-close-icon-mini:hover {
+  cursor: pointer;
+}
+
+.mini-families-arrow-icon {
+  position: absolute;
+  top: 15px;
+  z-index: 5000;
+  height: calc(100% - 1.5rem) !important;
+}
+.mini-families-arrow-icon.left {
+  left: -45px;
+}
+.mini-families-arrow-icon.right {
+  right: -45px;
+}
+.mini-families-arrow-icon:hover {
+  cursor: pointer;
+} 

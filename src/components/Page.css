@@ -1,0 +1,114 @@
+.page-wrapper {
+  color: white;
+  background-color: black;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+}
+
+.page-header {
+  padding-top: 5.25rem;
+  background-color: black;
+  position: relative;
+  height: 31.4rem;
+}
+.page-header[data-alternative-menu="true"] {
+  height: 36rem;
+}
+@media (max-width: 1920px) {
+  .page-header {
+    padding-top: 2.5rem;
+    height: 25.5rem;
+  }
+  .page-header[data-alternative-menu="true"] {
+    height: 25.5rem;
+  }
+}
+@media (max-width: 1382px) {
+  .page-header {
+    height: 18rem;
+  }
+  .page-header[data-alternative-menu="true"] {
+    height: 22rem;
+  }
+}
+@media (max-width: 1024px) {
+  .page-header {
+    height: 18rem;
+  }
+}
+@media (max-width: 900px) {
+  .page-header {
+    height: 13rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-header {
+    height: 10.5rem;
+  }
+  .page-header[data-alternative-menu="true"] {
+    height: 15rem;
+  }
+}
+@media (max-width: 480px) {
+  .page-header {
+    padding-top: 1.5rem;
+    height: 7.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .page-header {
+    height: 6.5rem;
+  }
+}
+
+.page-logo {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .page-logo {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}
+
+.page-logo-title {
+  padding: 0.5rem 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0 auto;
+  width: 85%;
+  height: 5rem;
+}
+
+.page-container {
+  width: 100%;
+  float: left;
+  margin: 0 auto;
+  background-color: black;
+  min-height: calc(100vh - 3rem);
+}
+
+.page-footer {
+  clear: both;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1rem;
+}
+.page-footer a {
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+  .page-footer {
+    font-size: 0.9rem;
+    padding: 1.2rem 1rem 0 0;
+  }
+} 

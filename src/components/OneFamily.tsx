@@ -1,27 +1,7 @@
 import React from "react";
+import { Gallery, PhotoProps } from "react-ikusi";
 
-import Gallery from 'react-ikusi';
-import styled from "styled-components";
-
-
-
-const OneFamilyContainer = styled.div`
-  height: 100%;
-`;
-
-const GalleryContainer = styled.div`
-  height: calc(100% - 5rem);
-  background-color: white;
-  @media (max-width: 1382px) {
-    // iPadPro Horizontal
-    
-  }
-  div {
-    margin-top: 0;
-  }
-`;
-
-const OneFamily = ({currentFamily }) => {
+const OneFamily = ({ currentFamily }: { currentFamily: { index: number; family: any; photos: PhotoProps[] } }) => {
   const configurations = [
     {
       lengths: [0],
@@ -30,27 +10,27 @@ const OneFamily = ({currentFamily }) => {
         { minWidth: 769, maxWidth: 1920, cols: 3, margin: 1 },
         { minWidth: 1921, cols: 5, margin: 1 },
       ],
-    }
+    },
   ];
 
-  const findConfigurations = () =>{
+  const findConfigurations = () => {
     const found =
       configurations.find(
         (config) => config.lengths.indexOf(currentFamily.photos.length) > -1
       ) || configurations[0];
-    return found.configurations
-  }
+    return found.configurations;
+  };
 
   return (
-    <OneFamilyContainer>
-      <GalleryContainer>
+    <div style={{ height: "100%" }}>
+      <div style={{ height: "calc(100% - 5rem)", backgroundColor: "white" }}>
         <Gallery
           photos={currentFamily.photos}
           configurations={findConfigurations()}
         />
-      </GalleryContainer>
-    </OneFamilyContainer>
+      </div>
+    </div>
   );
-}
+};
 
 export default OneFamily;

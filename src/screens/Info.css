@@ -1,0 +1,131 @@
+.info-wrapper {
+  padding-top: 2rem;
+  height: 100%;
+  background-color: black;
+  border-top: 0.2rem solid white;
+  border-bottom: 0.2rem solid white;
+}
+@media (min-width: 1920px) {
+  .info-wrapper {
+    padding-top: 12rem;
+  }
+}
+@media (max-width: 1382px) {
+  .info-wrapper {
+    border-top: 0.5px solid white;
+    border-bottom: 0.5px solid white;
+  }
+}
+
+.info-content {
+  width: 50%;
+  margin: 0 auto;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+@media (max-width: 768px) {
+  .info-content {
+    width: 70%;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1920px) {
+  .info-content {
+    width: 60%;
+  }
+}
+
+.info-text {
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+}
+.info-text p {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.info-text span {
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+@media (max-width: 768px) {
+  .info-text {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .info-text p {
+    margin-bottom: 1.1rem;
+    margin-left: 0.9rem;
+    margin-right: 0.9rem;
+  }
+}
+@media (min-width: 1920px) {
+  .info-text {
+    padding: 2rem 4rem 6rem;
+    font-size: 3rem;
+  }
+}
+
+.info-contact {
+  background: #808080;
+  border-top: 1px solid black;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .info-contact {
+    padding: 1rem 0;
+  }
+}
+@media (min-width: 1920px) {
+  .info-contact {
+    padding: 6rem 6rem;
+  }
+}
+
+.info-title {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .info-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .info-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+}
+
+.info-line {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2rem;
+}
+@media (max-width: 768px) {
+  .info-line {
+    font-size: 0.8rem;
+    flex-direction: column;
+    line-height: 1.2rem;
+  }
+}
+@media (min-width: 1920px) {
+  .info-line {
+    font-size: 3rem;
+    line-height: 11.5rem;
+  }
+}
+
+.info-link {
+  text-decoration: none;
+  color: white;
+} 
