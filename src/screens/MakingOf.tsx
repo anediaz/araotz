@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { Gallery } from 'react-ikusi';
-import FlickrAPI from "../services/FlickrAPI";
+import { getPhotoset } from "../services/FlickrAPI";
 import Page from '../components/Page';
 import { EXTRAS } from "../constants/constants";
 import { makingOf } from "../data/data";
@@ -40,7 +40,7 @@ const MakingOf: React.FC<MakingOfProps> = ({photos = [], updatePhotos}) => {
 
   useEffect(() => {
     if(!photos || !photos.length){
-      FlickrAPI.getPhotoset(makingOf, urlsBySize).then(
+      getPhotoset(makingOf, urlsBySize).then(
         (result) => updatePhotos(transformForGallery(result)),
         (error) => console.log("error =" + error)
       );

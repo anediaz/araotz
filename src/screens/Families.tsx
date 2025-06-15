@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Gallery, PhotoBaseProps } from "react-ikusi";
 import Page from "../components/Page";
-import FlickrAPI from "../services/FlickrAPI";
 import {
   getFamiliesSizes,
   getMiniFamiliesSizes,
@@ -10,6 +9,7 @@ import {
 import { home } from "../data/data";
 import OneFamily from "../components/OneFamily";
 import MiniFamilies from "../components/MiniFamilies";
+import { getPhotos, getPhotoset } from "../services/FlickrAPI";
 
 const familiesSizes = getFamiliesSizes();
 const miniFamiliesSizes = getMiniFamiliesSizes();
@@ -38,7 +38,7 @@ const Families: React.FC<FamiliesProps> = ({ photos = [], updatePhotos }) => {
   const familiesData = home.families;
   useEffect(() => {
     if (!photos || !photos.length) {
-      FlickrAPI.getPhotos(
+      getPhotos(
         familiesData.map((f: any) => f.coverId),
         Object.values(miniFamiliesSizes)
       ).then(
@@ -71,7 +71,7 @@ const Families: React.FC<FamiliesProps> = ({ photos = [], updatePhotos }) => {
 
   const openFamily = (photo: PhotoBaseProps) => {
     const index = Number(photo.id);
-    FlickrAPI.getPhotoset(
+    getPhotoset(
       familiesData[index].photosetId,
       urlsBySize
     ).then((photos: any) => {

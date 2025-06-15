@@ -48,7 +48,7 @@ const MiniFamilies: React.FC<MiniFamiliesProps> = ({onClose, currentFamily, allF
 
   const getMiniFamily = (family: Family, index: number) => {
     return <div className="mini-families-item" key={index} onClick={() => onFamilyClick(index)}>
-      <img className="mini-families-image" src={family.miniPicture}/>
+      <img alt={`mini-family-${index}`} className="mini-families-image" src={family.miniPicture}/>
       <div className="mini-families-tooltip">{family.name}</div>
     </div>
   }

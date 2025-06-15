@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
 import { EXTRAS } from "../constants/constants";
+import { getPhotos } from "../services/FlickrAPI";
 
 const { small320: def, large1024: big } = EXTRAS;
 const urlsBySize = [def.url, big.url];
@@ -20,13 +21,10 @@ const PhotoLoader: React.FC<PhotoLoaderProps> = ({
 }) => {
   useEffect(() => {
     if (!photos || !photos.length) {
-      // @ts-ignore
-      import("../services/FlickrAPI").then(FlickrAPI => {
-        FlickrAPI.default.getPhotos([photosetId], urlsBySize).then(
+      getPhotos([photosetId], urlsBySize).then(
           (result: any) => setPhotos(photosetId, transformResult(result)),
           (error: any) => console.log("error =" + error)
         );
-      });
     }
   }, [photos, photosetId, setPhotos]);
 

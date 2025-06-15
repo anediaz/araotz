@@ -1,6 +1,6 @@
 import { getPhotosetUrl, getPhotoUrl } from "../constants/constants";
 
-async function getPhotoset(photoSetId: string, size: string) {
+export async function getPhotoset(photoSetId: string, size: string) {
   const response = await fetch(getPhotosetUrl(photoSetId, size));
   return response && response.ok
     ? (await response.json()).photoset.photo
@@ -19,12 +19,7 @@ async function getPhoto(photoId: string, sizeLabels: string[]) {
 
 }
 
-async function getPhotos(photoIds: string[], sizeLabels: string[]) {
+export async function getPhotos(photoIds: string[], sizeLabels: string[]) {
   const photos = await Promise.all(photoIds.map(id => getPhoto(id, sizeLabels)))
   return photos
 }
-
-export default {
-  getPhotos,
-  getPhotoset
-};
